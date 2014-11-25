@@ -1,0 +1,23 @@
+body{font-family:arial,sans-serif;padding-top:0pt;margin:0;background-color:#efeff0;word-warp:bread-word;}
+p{margin-top:0;margin-bottom:5pt}
+/*padding-top距离顶部距离  -webkit-background-size 设置背景图片大小*/
+#title_section{padding-top:10px;}
+.title{
+    color:#464646;
+    font-weight:bold;
+    text-align:center;
+    font-size:14pt;
+    padding:0 0;
+}
+.subtitle{
+    color:#8e8e8e;
+    font-size:12pt;
+    text-align:center;
+    padding:0 0;
+}
+.publishTime{
+    color:#8e8e8e;
+    font-size:8pt;
+    text-align:right;
+    padding-top:7pt;padding-bottom:0pt;padding-right:40pt;
+}

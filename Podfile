@@ -1,0 +1,6 @@
+platform :ios,'6.0'
+pod 'AFNetworking','~> 2.2'
+pod 'RMMapper','~> 1.1.1'
+pod 'SVProgressHUD','~> 1.0'
+pod 'FMDB','~> 2.3'
+pod 'JSONKit', '~> 1.5pre'

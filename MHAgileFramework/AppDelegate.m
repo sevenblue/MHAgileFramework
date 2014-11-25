@@ -7,16 +7,35 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
+#import "SandboxFile.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    ViewController *mainViewController = [[ViewController alloc]init];
+    
+    //eg.1 download data
+    NSString *filePath = [[SandboxFile GetDocumentPath]stringByAppendingString:@"download.mp3"];
+    NSLog(@"%@",filePath);
+    [[MHAFNetworkingManager sharedInstance]downloadDataWithUrl:ACTION_EXAMPLE_MP3 localPath:filePath progress:^(long long totalBytesRead, long long totalBytesExpectedToRead) {
+        NSLog(@"currentSize:%f\ntotalSize:%f",totalBytesRead/1024.0f,totalBytesExpectedToRead/1024.0f);
+    } success:^(id responseObject) {
+        NSLog(@"responseObject:%@",responseObject);
+    } failure:^(NSError *error) {
+        NSLog(@"error:%@",error);
+    }];
+    
+    self.window.rootViewController = mainViewController;
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
