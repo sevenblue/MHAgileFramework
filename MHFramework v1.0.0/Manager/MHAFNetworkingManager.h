@@ -6,11 +6,12 @@
 //  Copyright (c) 2014年 M.H.International. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 
-typedef void(^NetworkSuccessHandler)(id responseObject,NSDictionary *resquestParam);
+typedef void(^NetworkSuccessHandler)(id responseObject);
 typedef void(^NetworkErrorHandler)(NSError *error);
-typedef void(^NetworkProgressHandler)(float progress);
+typedef void(^NetworkProgressHandler)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite);
 
 @interface MHAFNetworkingManager : NSObject
 
@@ -18,11 +19,13 @@ AS_SINGLETON(MHAFNetworkingManager)
 
 - (void)postWithUrl:(NSString *)url
               param:(NSDictionary *)parameters
+             taskId:(NSString *)taskId
             success:(NetworkSuccessHandler)success
             failure:(NetworkErrorHandler)failure;
 
 - (void)getWithUrl:(NSString *)url
              param:(NSDictionary* )parameters
+            taskId:(NSString *)taskId
            success:(NetworkSuccessHandler)success
            failure:(NetworkErrorHandler)failure;
 
@@ -38,6 +41,7 @@ AS_SINGLETON(MHAFNetworkingManager)
  */
 - (void)uploadDataWithUrl:(NSString *)url
                     param:(NSDictionary*)parameters
+                   taskId:(NSString *)taskId
                      data:(NSData *)data
                  dataType:(NSString *)type
                  fileName:(NSString *)fileName
@@ -47,19 +51,17 @@ AS_SINGLETON(MHAFNetworkingManager)
 
 /**
  *  download data with progress
+ *  @return MHDownloadTeskModel file in all needed download tesk info
  */
 - (void)downloadDataWithUrl:(NSString *)url
                   localPath:(NSString *)path
-                   progress:(void (^)(long long totalBytesRead, long long totalBytesExpectedToRead))progress
-                    success:(void (^)(id responseObject))success
-                    failure:(void (^)(NSError *error))failure;
-
-- (void)saveAllOperationQueue;
-- (void)startAllOperationQueue;
+                     taskId:(NSString *)taskId
+                   progress:(NetworkProgressHandler)progress
+                    success:(NetworkSuccessHandler)success
+                    failure:(NetworkErrorHandler)failure;
 
 - (void)pauseQueueWithTaskId:(NSString *)taskId;
-
+- (void)cancleQueueWithTaskId:(NSString *)taskId;
 - (void)cancleAllOperationQueue;
-- (void)cancleQueueWithTeskId:(NSString *)teskId;
 
 @end

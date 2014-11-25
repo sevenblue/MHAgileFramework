@@ -9,6 +9,7 @@
 #import "MHAFNetworkingManager.h"
 #import "AFURLRequestSerialization.h"
 #import "AFNetWorking.h"
+#import "AFHTTPRequestOperation+TaskInfo.h"
 @implementation MHAFNetworkingManager
 
 DEF_SINGLETON(MHAFNetworkingManager)
@@ -16,8 +17,9 @@ DEF_SINGLETON(MHAFNetworkingManager)
 #pragma mark - post
 - (void)postWithUrl:(NSString *)url
               param:(NSDictionary *)parameters
+             taskId:(NSString *)taskId
             success:(NetworkSuccessHandler)success
-            failure:(NetworkErrorHandler)failure;
+            failure:(NetworkErrorHandler)failure
 {
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
@@ -26,9 +28,9 @@ DEF_SINGLETON(MHAFNetworkingManager)
                      forHTTPHeaderField:@"Content-Type"];
     //设置编码格式
     [manager.responseSerializer setStringEncoding:NSUTF8StringEncoding];
-    [manager POST:url parameters:parameters  success:^(AFHTTPRequestOperation *operation, id responseObject)
+    AFHTTPRequestOperation *operation = [manager POST:url parameters:parameters  success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         success(responseObject,parameters);
+         success(responseObject);
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
@@ -41,11 +43,13 @@ DEF_SINGLETON(MHAFNetworkingManager)
 #endif
          failure(error);
      }];
+    [operation setTaskId:taskId];
 }
 
 #pragma mark - get
 - (void)getWithUrl:(NSString *)url
              param:(NSDictionary* )parameters
+            taskId:(NSString *)taskId
            success:(NetworkSuccessHandler)success
            failure:(NetworkErrorHandler)failure
 {
@@ -55,9 +59,9 @@ DEF_SINGLETON(MHAFNetworkingManager)
                      forHTTPHeaderField:@"Content-Type"];
     //设置编码格式
     [manager.responseSerializer setStringEncoding:NSUTF8StringEncoding];
-    [manager GET:url parameters:parameters  success:^(AFHTTPRequestOperation *operation, id responseObject)
+    AFHTTPRequestOperation *operation = [manager GET:url parameters:parameters  success:^(AFHTTPRequestOperation *operation, id responseObject)
      {
-         success(responseObject,parameters);
+         success(responseObject);
      }
           failure:^(AFHTTPRequestOperation *operation, NSError *error)
      {
@@ -70,15 +74,17 @@ DEF_SINGLETON(MHAFNetworkingManager)
 #endif
          failure(error);
      }];
+    [operation setTaskId:taskId];
 }
 
 #pragma mark - upload data
 - (void)uploadDataWithUrl:(NSString *)url
                     param:(NSDictionary*)parameters
+                   taskId:(NSString *)taskId
                      data:(NSData *)data
                  dataType:(NSString *)type
                  fileName:(NSString *)fileName
-                 progress:(void(^)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite))progress
+                 progress:(NetworkProgressHandler)progress
                   success:(NetworkSuccessHandler)success
                   failure:(NetworkErrorHandler)failure
 {
@@ -89,7 +95,7 @@ DEF_SINGLETON(MHAFNetworkingManager)
     AFHTTPRequestOperation *operation = [manager POST:url parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileData:data name:fileName fileName:[NSString stringWithFormat:@"%@.%@",fileName,type] mimeType:[NSString stringWithFormat:@"%@/%@",fileName,type]];
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        success(responseObject,parameters);
+        success(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
 #ifdef BEBUG
         NSException *exception = [NSException
@@ -100,35 +106,34 @@ DEF_SINGLETON(MHAFNetworkingManager)
 #endif
         failure(error);
     }];
+    [operation setTaskId:taskId];
     [operation setUploadProgressBlock:progress];
 }
 #pragma mark - download data
 - (void)downloadDataWithUrl:(NSString *)url
                   localPath:(NSString *)path
-                   progress:(void (^)(long long totalBytesRead, long long totalBytesExpectedToRead))progress
-                    success:(void (^)(id responseObject))success
-                    failure:(void (^)(NSError *error))failure
+                     taskId:(NSString *)taskId
+                   progress:(NetworkProgressHandler)progress
+                    success:(NetworkSuccessHandler)success
+                    failure:(NetworkErrorHandler)failure
 {
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0f];
-    AFHTTPRequestOperation *op = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    [op setOutputStream:[NSOutputStream outputStreamToFileAtPath:path append:NO]];
-    [op setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
-        progress(totalBytesRead,totalBytesExpectedToRead);
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    [operation setTaskId:taskId];
+    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:path append:NO]];
+    [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
+        progress(bytesRead,totalBytesRead,totalBytesExpectedToRead);
     }];
-    [op setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure(error);
     }];
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    [manager.operationQueue addOperation:op];
+    [manager.operationQueue addOperation:operation];
 }
 
-- (void)saveAllOperationQueue
-{
-    
-}
 - (void)startAllOperationQueue
 {
     
@@ -136,7 +141,22 @@ DEF_SINGLETON(MHAFNetworkingManager)
 
 - (void)pauseQueueWithTaskId:(NSString *)taskId
 {
-    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    for (AFHTTPRequestOperation*operation in manager.operationQueue.operations) {
+        if ([operation.taskId isEqualToString:taskId]) {
+            [operation pause];
+        }
+    }
+}
+
+- (void)cancleQueueWithTaskId:(NSString *)taskId
+{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    for (AFHTTPRequestOperation*operation in manager.operationQueue.operations) {
+        if ([operation.taskId isEqualToString:taskId]) {
+            [operation pause];
+        }
+    }
 }
 
 - (void)cancleAllOperationQueue
@@ -144,9 +164,6 @@ DEF_SINGLETON(MHAFNetworkingManager)
     [[AFHTTPRequestOperationManager manager].operationQueue cancelAllOperations];
 }
 
-- (void)cancleQueueWithTeskId:(NSString *)teskId
-{
-    [AFHTTPRequestOperationManager manager].operationQueue
-}
+
 
 @end

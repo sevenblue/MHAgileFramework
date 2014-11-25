@@ -80,7 +80,7 @@
 }
 
 - (void)loadDataWithURL:(NSString *)url param:(NSDictionary *)parameters response:(responseHandler)handler class:(Class)cls{
-    [[MHAFNetworkingManager sharedInstance] postWithUrl:url param:parameters success:^(id responseObject, NSDictionary *resquestParam) {
+    [[MHAFNetworkingManager sharedInstance] postWithUrl:url param:parameters taskId:nil success:^(id responseObject) {
             NSLog(@"msg:%@",[responseObject objectForKey:@"msg"]);
             BaseResponse * response  =(BaseResponse *)[ParseTool responseModelClass:cls andResposeObject:responseObject];
             switch (response.responseState.code)
@@ -91,7 +91,7 @@
                     //TODO
                     if (response)
                     {
-                        handler(responseObject,resquestParam);
+                        handler(responseObject);
                     }
                 }
                     break;
