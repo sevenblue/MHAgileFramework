@@ -12,7 +12,6 @@
 typedef void(^NetworkSuccessHandler)(id responseObject);
 typedef void(^NetworkErrorHandler)(NSError *error);
 typedef void(^NetworkProgressHandler)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite);
-
 @interface MHAFNetworkingManager : NSObject
 
 AS_SINGLETON(MHAFNetworkingManager)
@@ -30,7 +29,7 @@ AS_SINGLETON(MHAFNetworkingManager)
            failure:(NetworkErrorHandler)failure;
 
 /**
- *  upload data interface
+ *  Upload data interface
  *
  *  @param data       the data needed to upload
  *  @param type       the data type,eg.png/jepg/amr/...
@@ -50,12 +49,27 @@ AS_SINGLETON(MHAFNetworkingManager)
                   failure:(NetworkErrorHandler)failure;
 
 /**
- *  download data with progress
- *  @return MHDownloadTeskModel file in all needed download tesk info
+ *  Download data with progress
  */
 - (void)downloadDataWithUrl:(NSString *)url
-                  localPath:(NSString *)path
+                  localPath:(NSString *)localPath
+                   fileName:(NSString *)fileName
                      taskId:(NSString *)taskId
+                   progress:(NetworkProgressHandler)progress
+                    success:(NetworkSuccessHandler)success
+                    failure:(NetworkErrorHandler)failure;
+
+/**
+ *  Used for reload data which the app hasn't finished download at last time.
+ *
+ *  @param taskId   to identify the diffierence of every download operation
+ *  @param size     file had been downloaded size
+ */
+- (void)downloadDataWithUrl:(NSString *)url
+                  localPath:(NSString *)localPath
+                   fileName:(NSString *)fileName
+                     taskId:(NSString *)taskId
+              hasDownloaded:(BOOL)hasDownloaded
                    progress:(NetworkProgressHandler)progress
                     success:(NetworkSuccessHandler)success
                     failure:(NetworkErrorHandler)failure;

@@ -10,6 +10,7 @@
 #import "AFURLRequestSerialization.h"
 #import "AFNetWorking.h"
 #import "AFHTTPRequestOperation+TaskInfo.h"
+#import "MHDownloadHelper.h"
 @implementation MHAFNetworkingManager
 
 DEF_SINGLETON(MHAFNetworkingManager)
@@ -22,7 +23,7 @@ DEF_SINGLETON(MHAFNetworkingManager)
             failure:(NetworkErrorHandler)failure
 {
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
     //setHttpHeader
     [manager.requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8"
                      forHTTPHeaderField:@"Content-Type"];
@@ -53,7 +54,7 @@ DEF_SINGLETON(MHAFNetworkingManager)
            success:(NetworkSuccessHandler)success
            failure:(NetworkErrorHandler)failure
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
     //setHttpHeader
     [manager.requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8"
                      forHTTPHeaderField:@"Content-Type"];
@@ -88,7 +89,7 @@ DEF_SINGLETON(MHAFNetworkingManager)
                   success:(NetworkSuccessHandler)success
                   failure:(NetworkErrorHandler)failure
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
     [manager.requestSerializer setValue:@"multipart/form-data"
                      forHTTPHeaderField:@"Content-Type"];
 
@@ -111,16 +112,29 @@ DEF_SINGLETON(MHAFNetworkingManager)
 }
 #pragma mark - download data
 - (void)downloadDataWithUrl:(NSString *)url
-                  localPath:(NSString *)path
+                  localPath:(NSString *)localPath
+                   fileName:(NSString *)fileName
                      taskId:(NSString *)taskId
                    progress:(NetworkProgressHandler)progress
                     success:(NetworkSuccessHandler)success
                     failure:(NetworkErrorHandler)failure
 {
-    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0f];
+    [self downloadDataWithUrl:url localPath:localPath fileName:fileName taskId:taskId hasDownloaded:NO progress:progress success:success failure:failure];
+}
+
+- (void)downloadDataWithUrl:(NSString *)url
+                  localPath:(NSString *)localPath
+                   fileName:(NSString *)fileName
+                     taskId:(NSString *)taskId
+              hasDownloaded:(BOOL)hasDownloaded
+                   progress:(NetworkProgressHandler)progress
+                    success:(NetworkSuccessHandler)success
+                    failure:(NetworkErrorHandler)failure
+{
+    NSURLRequest *request = [self getURLRequestWithUrl:url localPath:localPath fileName:fileName hasDownloaded:YES];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [operation setTaskId:taskId];
-    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:path append:NO]];
+    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:localPath append:NO]];
     [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
         progress(bytesRead,totalBytesRead,totalBytesExpectedToRead);
     }];
@@ -130,10 +144,36 @@ DEF_SINGLETON(MHAFNetworkingManager)
         failure(error);
     }];
     
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
     [manager.operationQueue addOperation:operation];
 }
 
+//private
+- (NSURLRequest *)getURLRequestWithUrl:(NSString *)url
+                             localPath:(NSString *)localPath
+                              fileName:(NSString *)fileName
+                         hasDownloaded:(BOOL)hasDownloaded
+{
+    NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0f];
+    if (hasDownloaded) {
+        NSString *downloadPath = [localPath stringByAppendingPathComponent:fileName];
+        //检查文件是否已经下载了一部分
+        unsigned long long downloadedBytes = 0;
+        if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {
+            downloadedBytes = [MHDownloadHelper fileSizeForPath:downloadPath];
+            if (downloadedBytes > 0) {
+                NSMutableURLRequest *mutableURLRequest = [request mutableCopy];
+                NSString *requestRange = [NSString stringWithFormat:@"bytes=%llu-", downloadedBytes];
+                [mutableURLRequest setValue:requestRange forHTTPHeaderField:@"Range"];
+                request = mutableURLRequest;
+            }
+        }
+        [[NSURLCache sharedURLCache] removeCachedResponseForRequest:request];
+    }
+    return request;
+}
+
+#pragma mark -
 - (void)startAllOperationQueue
 {
     
@@ -141,7 +181,7 @@ DEF_SINGLETON(MHAFNetworkingManager)
 
 - (void)pauseQueueWithTaskId:(NSString *)taskId
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
     for (AFHTTPRequestOperation*operation in manager.operationQueue.operations) {
         if ([operation.taskId isEqualToString:taskId]) {
             [operation pause];
@@ -151,10 +191,11 @@ DEF_SINGLETON(MHAFNetworkingManager)
 
 - (void)cancleQueueWithTaskId:(NSString *)taskId
 {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
     for (AFHTTPRequestOperation*operation in manager.operationQueue.operations) {
+        NSLog(@"%@",operation.taskId);
         if ([operation.taskId isEqualToString:taskId]) {
-            [operation pause];
+            [operation cancel];
         }
     }
 }

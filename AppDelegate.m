@@ -24,8 +24,9 @@
     //eg.1 download data
     NSString *filePath = [[SandboxFile GetDocumentPath]stringByAppendingString:@"download.mp3"];
     NSLog(@"%@",filePath);
-    [[MHAFNetworkingManager sharedInstance]downloadDataWithUrl:ACTION_EXAMPLE_MP3 localPath:filePath progress:^(long long totalBytesRead, long long totalBytesExpectedToRead) {
-        NSLog(@"currentSize:%f\ntotalSize:%f",totalBytesRead/1024.0f,totalBytesExpectedToRead/1024.0f);
+    [[MHAFNetworkingManager sharedInstance]downloadDataWithUrl:ACTION_EXAMPLE_MP3 localPath:filePath fileName:@"apple.mp3" taskId:[NSString stringWithFormat:@"taskId%d",1] progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        NSLog(@"currentSize:%f\ntotalSize:%f",totalBytesWritten/1024.0f,totalBytesExpectedToWrite/1024.0f);
+        sleep(1);
     } success:^(id responseObject) {
         NSLog(@"responseObject:%@",responseObject);
     } failure:^(NSError *error) {
