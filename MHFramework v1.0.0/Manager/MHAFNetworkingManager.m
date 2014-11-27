@@ -131,10 +131,10 @@ DEF_SINGLETON(MHAFNetworkingManager)
                     success:(NetworkSuccessHandler)success
                     failure:(NetworkErrorHandler)failure
 {
-    NSURLRequest *request = [self getURLRequestWithUrl:url localPath:localPath fileName:fileName hasDownloaded:YES];
+    NSURLRequest *request = [self getURLRequestWithUrl:url localPath:localPath fileName:fileName hasDownloaded:hasDownloaded];
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
     [operation setTaskId:taskId];
-    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:localPath append:NO]];
+    [operation setOutputStream:[NSOutputStream outputStreamToFileAtPath:[localPath stringByAppendingPathComponent:fileName] append:NO]];
     [operation setDownloadProgressBlock:^(NSUInteger bytesRead, long long totalBytesRead, long long totalBytesExpectedToRead) {
         progress(bytesRead,totalBytesRead,totalBytesExpectedToRead);
     }];
@@ -148,7 +148,11 @@ DEF_SINGLETON(MHAFNetworkingManager)
     [manager.operationQueue addOperation:operation];
 }
 
-//private
+/**
+ *  Private
+ *  Get NSURLRequest obj
+ *  @param hasDownloaded Check if the file had finish downloaded or not
+ */
 - (NSURLRequest *)getURLRequestWithUrl:(NSString *)url
                              localPath:(NSString *)localPath
                               fileName:(NSString *)fileName
@@ -157,7 +161,6 @@ DEF_SINGLETON(MHAFNetworkingManager)
     NSURLRequest *request = [[NSURLRequest alloc]initWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:20.0f];
     if (hasDownloaded) {
         NSString *downloadPath = [localPath stringByAppendingPathComponent:fileName];
-        //检查文件是否已经下载了一部分
         unsigned long long downloadedBytes = 0;
         if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {
             downloadedBytes = [MHDownloadHelper fileSizeForPath:downloadPath];
@@ -168,7 +171,11 @@ DEF_SINGLETON(MHAFNetworkingManager)
                 request = mutableURLRequest;
             }
         }
-        [[NSURLCache sharedURLCache] removeCachedResponseForRequest:request];
+    }else{
+        NSString *downloadPath = [localPath stringByAppendingPathComponent:fileName];
+        if(![[NSFileManager defaultManager] fileExistsAtPath:downloadPath]){
+            [[NSFileManager defaultManager]createFileAtPath:downloadPath contents:nil attributes:nil];
+        }
     }
     return request;
 }
@@ -177,6 +184,15 @@ DEF_SINGLETON(MHAFNetworkingManager)
 - (void)startAllOperationQueue
 {
     
+}
+
+- (void)startQueueWithTaskId:(NSString *)taskId{
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
+    for (AFHTTPRequestOperation*operation in manager.operationQueue.operations) {
+        if ([operation.taskId isEqualToString:taskId]) {
+            [operation start];
+        }
+    }
 }
 
 - (void)pauseQueueWithTaskId:(NSString *)taskId

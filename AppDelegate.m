@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
-#import "SandboxFile.h"
 @interface AppDelegate ()
 
 @end
@@ -20,19 +19,6 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     ViewController *mainViewController = [[ViewController alloc]init];
-    
-    //eg.1 download data
-    NSString *filePath = [[SandboxFile GetDocumentPath]stringByAppendingString:@"download.mp3"];
-    NSLog(@"%@",filePath);
-    [[MHAFNetworkingManager sharedInstance]downloadDataWithUrl:ACTION_EXAMPLE_MP3 localPath:filePath fileName:@"apple.mp3" taskId:[NSString stringWithFormat:@"taskId%d",1] progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
-        NSLog(@"currentSize:%f\ntotalSize:%f",totalBytesWritten/1024.0f,totalBytesExpectedToWrite/1024.0f);
-        sleep(1);
-    } success:^(id responseObject) {
-        NSLog(@"responseObject:%@",responseObject);
-    } failure:^(NSError *error) {
-        NSLog(@"error:%@",error);
-    }];
-    
     self.window.rootViewController = mainViewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

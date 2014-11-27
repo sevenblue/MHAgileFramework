@@ -15,4 +15,4 @@
 
 //ACTION
 #define ACTION_LOGIN       @"v1/user/slogin"       //登陆
-#define ACTION_EXAMPLE_MP3 @"http://music.baidu.com/data/music/file?link=http://yinyueshiting.baidu.com/data2/music/124383790/124380645248400128.mp3?xcode=ba6dac2afc7c467930ebef21910a5cfe2f7167fd0a01384c&song_id=124380645"
+#define ACTION_EXAMPLE_MP3 @"http://music.baidu.com/data/music/file?link=http://yinyueshiting.baidu.com/data2/music/"

@@ -74,6 +74,7 @@ AS_SINGLETON(MHAFNetworkingManager)
                     success:(NetworkSuccessHandler)success
                     failure:(NetworkErrorHandler)failure;
 
+- (void)startQueueWithTaskId:(NSString *)taskId;
 - (void)pauseQueueWithTaskId:(NSString *)taskId;
 - (void)cancleQueueWithTaskId:(NSString *)taskId;
 - (void)cancleAllOperationQueue;
