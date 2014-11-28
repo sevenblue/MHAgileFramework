@@ -1,0 +1,18 @@
+//
+//  MHPrefixHeader.pch
+//  MHAgileFramework
+//
+//  Created by Steven Nelson on 14/11/20.
+//  Copyright (c) 2014年 Steven Nelson. All rights reserved.
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import "MHCommonDef.h"
+#import "MHInterface.h"
+#endif
