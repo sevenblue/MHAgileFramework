@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>19C99415-2324-4BBF-8B30-DFD2AE492F1C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MHAgileFramework</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>2E06A443E343D54F7D7BE73888022FD00679775D</key>
+		<string>https://github.com/sevenblue/-A.git</string>
+		<key>576864342FABCE989F748CCB94DE88113243519F</key>
+		<string>https://github.com/sevenblue/MHAgileFramework.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MHAgileFramework.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2E06A443E343D54F7D7BE73888022FD00679775D</key>
+		<string>..</string>
+		<key>576864342FABCE989F748CCB94DE88113243519F</key>
+		<string>..MHAgileFramework</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/sevenblue/-A.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2E06A443E343D54F7D7BE73888022FD00679775D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>2E06A443E343D54F7D7BE73888022FD00679775D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MHAgileFramework</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>576864342FABCE989F748CCB94DE88113243519F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MHAgileFrameworkMHAgileFramework</string>
+		</dict>
+	</array>
+</dict>
+</plist>

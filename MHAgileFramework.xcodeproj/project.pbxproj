@@ -59,6 +59,10 @@
 		B02C06471A1DCC9200305193 /* YRSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B02C061C1A1DCC9200305193 /* YRSideViewController.m */; };
 		B02C064D1A1F375200305193 /* MHBaseViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B02C064C1A1F375200305193 /* MHBaseViewController+NavigationBar.m */; };
 		B0F18C851A233CC100EFF1CA /* SandboxFile.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F18C841A233CC100EFF1CA /* SandboxFile.m */; };
+		B0F7920A1A2475A600D1FAFB /* MHDownloadTeskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F792091A2475A600D1FAFB /* MHDownloadTeskModel.m */; };
+		B0F792101A24935500D1FAFB /* AFHTTPRequestOperation+TaskInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F7920F1A24935500D1FAFB /* AFHTTPRequestOperation+TaskInfo.m */; };
+		B0F792141A24996A00D1FAFB /* Note in Resources */ = {isa = PBXBuildFile; fileRef = B0F792131A24996A00D1FAFB /* Note */; };
+		B0F792171A25CEB500D1FAFB /* MHDownloadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B0F792161A25CEB500D1FAFB /* MHDownloadHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +176,13 @@
 		B02C064C1A1F375200305193 /* MHBaseViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MHBaseViewController+NavigationBar.m"; sourceTree = "<group>"; };
 		B0F18C831A233CC100EFF1CA /* SandboxFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SandboxFile.h; sourceTree = "<group>"; };
 		B0F18C841A233CC100EFF1CA /* SandboxFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SandboxFile.m; sourceTree = "<group>"; };
+		B0F792081A2475A600D1FAFB /* MHDownloadTeskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDownloadTeskModel.h; sourceTree = "<group>"; };
+		B0F792091A2475A600D1FAFB /* MHDownloadTeskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDownloadTeskModel.m; sourceTree = "<group>"; };
+		B0F7920E1A24935500D1FAFB /* AFHTTPRequestOperation+TaskInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperation+TaskInfo.h"; sourceTree = "<group>"; };
+		B0F7920F1A24935500D1FAFB /* AFHTTPRequestOperation+TaskInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperation+TaskInfo.m"; sourceTree = "<group>"; };
+		B0F792131A24996A00D1FAFB /* Note */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Note; sourceTree = "<group>"; };
+		B0F792151A25CEB500D1FAFB /* MHDownloadHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDownloadHelper.h; sourceTree = "<group>"; };
+		B0F792161A25CEB500D1FAFB /* MHDownloadHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDownloadHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +207,7 @@
 		B02C04EE1A1CAB7400305193 = {
 			isa = PBXGroup;
 			children = (
+				B0F792131A24996A00D1FAFB /* Note */,
 				B02C04F91A1CAB7400305193 /* MHAgileFramework */,
 				B02C05161A1CAB7400305193 /* MHAgileFrameworkTests */,
 				B02C04F81A1CAB7400305193 /* Products */,
@@ -311,6 +323,8 @@
 			children = (
 				B02C05CB1A1DCC9200305193 /* MHAFNetworkingManager.h */,
 				B02C05CC1A1DCC9200305193 /* MHAFNetworkingManager.m */,
+				B0F792151A25CEB500D1FAFB /* MHDownloadHelper.h */,
+				B0F792161A25CEB500D1FAFB /* MHDownloadHelper.m */,
 				B02C05CD1A1DCC9200305193 /* MHSlidingManager.h */,
 				B02C05CE1A1DCC9200305193 /* MHSlidingManager.m */,
 			);
@@ -326,6 +340,8 @@
 				B02C05D31A1DCC9200305193 /* MHUserInfo.m */,
 				B02C05D41A1DCC9200305193 /* NSBaseObject.h */,
 				B02C05D51A1DCC9200305193 /* NSBaseObject.m */,
+				B0F792081A2475A600D1FAFB /* MHDownloadTeskModel.h */,
+				B0F792091A2475A600D1FAFB /* MHDownloadTeskModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -405,6 +421,8 @@
 				B02C05F11A1DCC9200305193 /* UIViewController+MHViewExtend.m */,
 				B0F18C831A233CC100EFF1CA /* SandboxFile.h */,
 				B0F18C841A233CC100EFF1CA /* SandboxFile.m */,
+				B0F7920E1A24935500D1FAFB /* AFHTTPRequestOperation+TaskInfo.h */,
+				B0F7920F1A24935500D1FAFB /* AFHTTPRequestOperation+TaskInfo.m */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -611,6 +629,7 @@
 				B02C062A1A1DCC9200305193 /* profundity_content.js in Resources */,
 				B02C062D1A1DCC9200305193 /* navi_btn_right@2x.png in Resources */,
 				B02C06291A1DCC9200305193 /* profundity_content.css in Resources */,
+				B0F792141A24996A00D1FAFB /* Note in Resources */,
 				B02C05B91A1DCA7500305193 /* Default-568h@2x.png in Resources */,
 				B02C06411A1DCC9200305193 /* MJRefresh.bundle in Resources */,
 				B02C06231A1DCC9200305193 /* MHRightSliderViewController.xib in Resources */,
@@ -672,7 +691,9 @@
 				B02C063C1A1DCC9200305193 /* NSStringAdditions.m in Sources */,
 				B02C062E1A1DCC9200305193 /* MHBaseNavigationController.m in Sources */,
 				B02C06261A1DCC9200305193 /* MHBaseModel.m in Sources */,
+				B0F792171A25CEB500D1FAFB /* MHDownloadHelper.m in Sources */,
 				B02C06341A1DCC9200305193 /* UIView+NIBView.m in Sources */,
+				B0F792101A24935500D1FAFB /* AFHTTPRequestOperation+TaskInfo.m in Sources */,
 				B02C06241A1DCC9200305193 /* MHAFNetworkingManager.m in Sources */,
 				B02C06441A1DCC9200305193 /* MJRefreshFooterView.m in Sources */,
 				B02C06431A1DCC9200305193 /* MJRefreshConst.m in Sources */,
@@ -695,6 +716,7 @@
 				B02C06371A1DCC9200305193 /* ParseTool.m in Sources */,
 				B02C062F1A1DCC9200305193 /* MHBaseTableViewController.m in Sources */,
 				B02C06251A1DCC9200305193 /* MHSlidingManager.m in Sources */,
+				B0F7920A1A2475A600D1FAFB /* MHDownloadTeskModel.m in Sources */,
 				B02C06301A1DCC9200305193 /* MHBaseViewController.m in Sources */,
 				B02C06361A1DCC9200305193 /* MHMD5.m in Sources */,
 				B02C064D1A1F375200305193 /* MHBaseViewController+NavigationBar.m in Sources */,

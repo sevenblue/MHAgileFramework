@@ -128,7 +128,7 @@
             return;
         }
         
-        [self loadDataWithURL:[self requestURL] param:[self requestParameters] response:^(id result, NSDictionary *parameters){
+        [self loadDataWithURL:[self requestURL] param:[self requestParameters] response:^(id result){
             if([self.tableDataArray count]>0)[self.tableDataArray removeAllObjects];
             
             id data = [result objectForKey:@"data"];
@@ -159,7 +159,7 @@
         _indexPage+=1;
         NSMutableDictionary *tempParameters = [NSMutableDictionary dictionaryWithDictionary: [self requestParameters]];
         [tempParameters setValue:[NSString stringWithFormat:@"%d",_indexPage] forKey:@"offset"];
-        [self loadDataWithURL:[self requestURL] param:[self requestParameters] response:^(id result, NSDictionary *parameters){
+        [self loadDataWithURL:[self requestURL] param:[self requestParameters] response:^(id result){
             NSDictionary *data = [result objectForKey:@"data"];
             if ([data class]==NSClassFromString(@"NSNull") ||!data) {
                 [self showAlertWithTitle:@"提示" andMessage:@"列表为空!"];

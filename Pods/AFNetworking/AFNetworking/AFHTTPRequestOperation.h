@@ -31,7 +31,6 @@
 ///------------------------------------------------
 /// @name Getting HTTP URL Connection Information
 ///------------------------------------------------
-
 /**
  The last HTTP response received by the operation's connection.
  */

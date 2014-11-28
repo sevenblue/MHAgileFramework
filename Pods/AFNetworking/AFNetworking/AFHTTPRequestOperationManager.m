@@ -38,6 +38,16 @@
 
 @implementation AFHTTPRequestOperationManager
 
++ (AFHTTPRequestOperationManager *)sharedInstance
+{
+    static dispatch_once_t once;
+    static AFHTTPRequestOperationManager * manager;
+    dispatch_once( &once, ^{
+        manager = [[AFHTTPRequestOperationManager alloc] init];
+    } );
+    return manager;
+}
+
 + (instancetype)manager {
     return [[self alloc] initWithBaseURL:nil];
 }

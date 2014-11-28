@@ -17,7 +17,7 @@
 - (void)removeObjectForKey:(id)key;
 @end
 
-typedef void (^responseHandler)(id result, NSDictionary *parameters);
+typedef void (^responseHandler)(id result);
 
 @interface MHBaseViewController : UIViewController
 
