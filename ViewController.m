@@ -106,6 +106,9 @@
         [[MHAFNetworkingManager sharedInstance]cancleQueueWithTaskId:KEY_TASKID_MP3];
     }
     else if (!_downloaded && !_firstDownloaded){        //暂停以后离线下载
+        _downloaded = YES;
+        [btn setTitle:@"停止下载" forState:UIControlStateNormal];
+
         __block UIProgressView *progressV = _progressV;
         __block UILabel *progressLabel = _progressLabel;
         
