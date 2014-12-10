@@ -7,7 +7,6 @@
 //
 
 #import "MHBaseViewController.h"
-#import "MHBaseNavigationController.h"
 @interface MHMainInterfaceViewController : MHBaseViewController
  
 @end

@@ -1,16 +1,17 @@
 //
-//  ViewController.m
+//  MHResumeViewController.m
 //  MHAgileFramework
 //
-//  Created by Steven Nelson on 14/11/19.
+//  Created by Steven Nelson on 14/12/10.
 //  Copyright (c) 2014年 Steven Nelson. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MHResumeViewController.h"
 #import "SandboxFile.h"
 
 #define KEY_TASKID_MP3  @"KEY_TASKID_MP3"
-@interface ViewController ()
+
+@interface MHResumeViewController ()
 {
     UIProgressView *_progressV;
     UILabel *_progressLabel;
@@ -24,16 +25,7 @@
 }
 @end
 
-@implementation ViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    [self initData];
-    
-    [self addUI];
-}
+@implementation MHResumeViewController
 
 - (void)initData{
     //initilize data
@@ -42,6 +34,8 @@
 }
 
 - (void)addUI{
+    [self setTitle:@"离线下载"];
+    
     //progress label
     _progressLabel = [[UILabel alloc]initWithFrame:CGRectMake(110, 50, 80, 20)];
     _progressLabel.textAlignment = NSTextAlignmentCenter;
@@ -67,7 +61,7 @@
         _downloaded = YES;
         _firstDownloaded = NO;
         [btn setTitle:@"停止下载" forState:UIControlStateNormal];
-
+        
         __block UIProgressView *progressV = _progressV;
         __block UILabel *progressLabel = _progressLabel;
         
@@ -75,7 +69,7 @@
         NSString *filePath = [self getDownloadFilePath:@"downloadMP3"];
         NSLog(@"filePath：%@",filePath);
         
-        [[MHAFNetworkingManager sharedInstance]synchronizeDownloadDataWithUrl:ACTION_EXAMPLE_MP3 localPath:filePath fileName:@"apple.mp3" taskId:KEY_TASKID_MP3 progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        [[MHAFNetworkingManager sharedInstance]downloadDataWithUrl:ACTION_EXAMPLE_MP3 localPath:filePath fileName:@"apple.mp3" taskId:KEY_TASKID_MP3 progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
             
             if (totalBytesWritten == totalBytesExpectedToWrite) {
                 return ;
@@ -83,7 +77,8 @@
             
             _currentSize = totalBytesWritten/1024.f;
             _totalSize = totalBytesExpectedToWrite/1024.f;
-            NSLog(@"progress%lld——%lld",totalBytesWritten,totalBytesExpectedToWrite);
+            NSLog(@"首次下载progress%lld——%lld",totalBytesWritten,totalBytesExpectedToWrite);
+            
             NSString *proStr = [[NSString stringWithFormat:@"%.0f",(_currentSize/_totalSize)*100]stringByAppendingString:@"%"];
             
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -96,19 +91,18 @@
                 progressV.progress = 1;
             });
         } failure:^(NSError *error) {
-            NSLog(@"error:%@",error);
         }];
     }
     else if (_downloaded && !_firstDownloaded){         //第一次暂停
         _downloaded = NO;
+        _reCurrentSize = 0.0f;
         [btn setTitle:@"断点续传" forState:UIControlStateNormal];
-        
         [[MHAFNetworkingManager sharedInstance]cancleQueueWithTaskId:KEY_TASKID_MP3];
     }
     else if (!_downloaded && !_firstDownloaded){        //暂停以后离线下载
         _downloaded = YES;
         [btn setTitle:@"停止下载" forState:UIControlStateNormal];
-
+        
         __block UIProgressView *progressV = _progressV;
         __block UILabel *progressLabel = _progressLabel;
         
@@ -117,6 +111,7 @@
             float currentSize;
             if (_reCurrentSize) {
                 currentSize = totalBytesWritten/1024.f + _reCurrentSize;
+                _currentSize = currentSize;
             }else{
                 float currentSize = totalBytesWritten/1024.f + _currentSize;
                 _reCurrentSize = currentSize;
@@ -145,22 +140,7 @@
 
 //helper
 - (NSString*)getDownloadFilePath:(NSString *)name {
-    NSString *filePath = [[SandboxFile GetDocumentPath] stringByAppendingPathComponent:name];
-    // Remove the filename and create the remaining path
-//    BOOL result = [[NSFileManager defaultManager] createDirectoryAtPath:[filePath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
-//    if (result) {
-//        return filePath;
-//    }else{
-//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"创建文件夹失败" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil];
-//        [alert show];
-//        return [SandboxFile GetDocumentPath];
-//    }
-    return filePath;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return [SandboxFile CreateList:[SandboxFile GetDocumentPath] ListName:name];
 }
 
 @end

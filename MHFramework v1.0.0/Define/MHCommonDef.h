@@ -113,7 +113,7 @@ typedef enum {
 
 //--------------------------------------DEBUG Start----------------------------------
 #ifdef DEBUG
-#define NSLog(format, ...) NSLog(format, ## __VA_ARGS__)
+#define NSLog(format, ...) NSLog(@"\n>>>[Class:%@],[Line:%d],[Function:%s]\n***" format,[self class],__LINE__ ,__FUNCTION__,##__VA_ARGS__);
 #else
 #define NSLog(format, ...)
 #endif
