@@ -75,7 +75,7 @@
         NSString *filePath = [self getDownloadFilePath:@"downloadMP3"];
         NSLog(@"filePath：%@",filePath);
         
-        [[MHAFNetworkingManager sharedInstance]downloadDataWithUrl:ACTION_EXAMPLE_MP3 localPath:filePath fileName:@"apple.mp3" taskId:KEY_TASKID_MP3 progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        [[MHAFNetworkingManager sharedInstance]synchronizeDownloadDataWithUrl:ACTION_EXAMPLE_MP3 localPath:filePath fileName:@"apple.mp3" taskId:KEY_TASKID_MP3 progress:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
             
             if (totalBytesWritten == totalBytesExpectedToWrite) {
                 return ;
@@ -147,8 +147,14 @@
 - (NSString*)getDownloadFilePath:(NSString *)name {
     NSString *filePath = [[SandboxFile GetDocumentPath] stringByAppendingPathComponent:name];
     // Remove the filename and create the remaining path
-    [[NSFileManager defaultManager] createDirectoryAtPath:[filePath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
-    
+//    BOOL result = [[NSFileManager defaultManager] createDirectoryAtPath:[filePath stringByDeletingLastPathComponent] withIntermediateDirectories:YES attributes:nil error:nil];
+//    if (result) {
+//        return filePath;
+//    }else{
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"提示" message:@"创建文件夹失败" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles: nil];
+//        [alert show];
+//        return [SandboxFile GetDocumentPath];
+//    }
     return filePath;
 }
 

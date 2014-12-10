@@ -12,9 +12,17 @@
 typedef void(^NetworkSuccessHandler)(id responseObject);
 typedef void(^NetworkErrorHandler)(NSError *error);
 typedef void(^NetworkProgressHandler)(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite);
+
 @interface MHAFNetworkingManager : NSObject
 
 AS_SINGLETON(MHAFNetworkingManager)
+- (void)synchronizeDownloadDataWithUrl:(NSString *)url
+                             localPath:(NSString *)localPath
+                              fileName:(NSString *)fileName
+                                taskId:(NSString *)taskId
+                              progress:(NetworkProgressHandler)progress
+                               success:(NetworkSuccessHandler)success
+                               failure:(NetworkErrorHandler)failure;
 
 - (void)postWithUrl:(NSString *)url
               param:(NSDictionary *)parameters

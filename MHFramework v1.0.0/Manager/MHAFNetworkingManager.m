@@ -15,6 +15,32 @@
 
 DEF_SINGLETON(MHAFNetworkingManager)
 
+#pragma mark - 同步
+- (void)synchronizeDownloadDataWithUrl:(NSString *)url
+                                     localPath:(NSString *)localPath
+                                      fileName:(NSString *)fileName
+                                        taskId:(NSString *)taskId
+                                      progress:(NetworkProgressHandler)progress
+                                       success:(NetworkSuccessHandler)success
+                                       failure:(NetworkErrorHandler)failure
+
+{
+    NSCondition* itlock = [[NSCondition alloc] init];
+    [[MHAFNetworkingManager sharedInstance]downloadDataWithUrl:url localPath:localPath fileName:fileName taskId:taskId hasDownloaded:NO progress:progress success:^(id responseObject) {
+        [itlock lock];
+        [itlock signal];
+        [itlock unlock];
+        success(responseObject);
+    } failure:^(NSError *error) {
+        [itlock lock];
+        [itlock signal];
+        [itlock unlock];
+        failure(error);
+    }];
+    [itlock lock];
+    [itlock wait];
+    [itlock unlock];
+}
 #pragma mark - post
 - (void)postWithUrl:(NSString *)url
               param:(NSDictionary *)parameters
@@ -22,7 +48,6 @@ DEF_SINGLETON(MHAFNetworkingManager)
             success:(NetworkSuccessHandler)success
             failure:(NetworkErrorHandler)failure
 {
-    
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
     //setHttpHeader
     [manager.requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8"

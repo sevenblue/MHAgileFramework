@@ -7,7 +7,12 @@
 //
 
 //--------------------------------------Key Start----------------------------------
+//DataBaseTable
+#define DATABASE_PATH(tableName) [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0]stringByAppendingString:[NSString stringWithFormat:@"/%@.db",tableName]]
+#define GetDataBasePath(tableName) [SandboxFile GetPathForDocuments:[NSString stringWithFormat:@"%@.db",tableName] inDir:@"DataBase"]
 
+#define kTableName_NewsList @"kTableName_NewsList"
+#define kTableName_NewsContentPages @"kTableName_NewsContentPages"
 //--------------------------------------Key END----------------------------------
 
 

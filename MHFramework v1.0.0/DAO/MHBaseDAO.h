@@ -1,13 +1,13 @@
 //
-//  NSBaseObject.h
+//  MHBaseDAO.h
 //  PeopleDailyNew
 //
-//  Created by Steven Nelson on 14-6-24.
+//  Created by Steven Nelson on 14-8-27.
 //  Copyright (c) 2014年 M.H.International. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface NSBaseObject : NSObject
+@interface MHBaseDAO : NSObject
 
 @end

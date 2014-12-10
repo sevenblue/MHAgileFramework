@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ *  接口继承，要存入sqlite的model必须实现此protocol
+ */
+@protocol MHDataBaseModelInteface <NSObject>
+@property (nonatomic,copy)   NSString* primaryKey;  //主键名称 如果没有rowid 则跟据此名称update 和delete
+@property (nonatomic,assign) int       rowid;       //数据库的 rowid
+@end
+
 @interface MHBaseModel : NSObject
 
 @end
