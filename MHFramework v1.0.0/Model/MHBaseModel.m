@@ -9,6 +9,7 @@
 #import "MHBaseModel.h"
 #import "NSDictionary+Devil.h"
 #import "NSStringAdditions.h"
+#import "NSData+IJson.h"
 
 @implementation MHBaseModel
 

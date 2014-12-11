@@ -50,6 +50,7 @@ DEF_SINGLETON(MHAFNetworkingManager)
 {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager sharedInstance];
     //setHttpHeader
+    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/plain",nil];
     [manager.requestSerializer setValue:@"application/x-www-form-urlencoded; charset=utf-8"
                      forHTTPHeaderField:@"Content-Type"];
     //设置编码格式

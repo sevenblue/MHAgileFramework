@@ -11,4 +11,3 @@
 #import "MHBaseModel.h"
 #import "MHSlidingManager.h"
 #import "MHBaseViewController+NavigationBar.h"
-#import "MHAFNetworkingManager.h"
