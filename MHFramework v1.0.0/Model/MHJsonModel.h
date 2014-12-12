@@ -21,3 +21,7 @@
 @property (nonatomic,copy) NSString *tag_type;
 
 @end
+
+@interface children : MHJsonModel
+
+@end

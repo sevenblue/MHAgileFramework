@@ -42,7 +42,7 @@
          {
              if ([obj isKindOfClass:[NSArray class]])
              {
-                 NSArray *array = [[obj JSONString] jsonStringToNSObjectsWithKey:nil andClass:NSClassFromString([keyDict valueForKey:key])];
+                 NSArray *array = [self jsonDataToNSObjectsClass:NSClassFromString([keyDict valueForKey:key])];
                  [object setValue:array forKey:key];
              }
              else if([obj isKindOfClass:[NSDictionary class]])
