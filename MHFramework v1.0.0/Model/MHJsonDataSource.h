@@ -10,6 +10,8 @@
 
 @interface MHJsonDataSource : NSObject
 
-+ (NSArray *)factoryWithResponseData:(id)responseObj andClass:(Class)cls;
++ (NSArray *)jsonDataToNSObjectsWithResponseObject:(id)obj andClass:(Class)aClass;
+
++ (NSObject *)jsonDataToNSObjectWithResponseObject:(id)obj andClass:(Class)aClass;
 
 @end

@@ -32,8 +32,12 @@
 - (void)downLoadJson:(id)sender{
     [[MHAFNetworkingManager sharedInstance]postWithUrl:ACTION_EXAMPLE_JSON param:nil taskId:ACTION_EXAMPLE_JSON success:^(id responseObject) {
         if (responseObject) {
-            NSArray *elementArr = [MHJsonDataSource factoryWithResponseData:responseObject andClass:[MHJsonModel class]];
-            NSLog(@"elementArr : %@",elementArr);
+            if ([[responseObject class] isSubclassOfClass:[NSArray class]]) {
+                for (id obj in responseObject) {
+                    id model = [MHJsonDataSource jsonDataToNSObjectWithResponseObject:obj andClass:[MHJsonModel class]];
+                    NSLog(@"%@",model);
+                }
+            }
         }
         
     } failure:^(NSError *error) {

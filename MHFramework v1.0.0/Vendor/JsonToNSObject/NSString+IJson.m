@@ -36,7 +36,7 @@
     
     if ([rootJsonObj isKindOfClass:[NSArray class]])
     {
-        int a = [(NSArray *)rootJsonObj count];
+        int a = (int)[(NSArray *)rootJsonObj count];
         NSMutableArray    *objects = [NSMutableArray arrayWithCapacity:a];
         for (NSDictionary *dict in rootJsonObj)
         {
