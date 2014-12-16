@@ -55,7 +55,7 @@
         static dispatch_once_t onceToken;
         
         dispatch_once(&onceToken, ^{
-            onceCreateTable = [[NSMutableDictionary  alloc]initWithCapacity:8];
+            onceCreateTable = [[NSMutableDictionary alloc]initWithCapacity:8];
         });
         NSString* className = NSStringFromClass(self.class);
         NSNumber* onceToCreate = [onceCreateTable objectForKey:className];
@@ -259,10 +259,10 @@ static NSMutableDictionary* onceCreateTable;
              NSString* insertSQL = [NSString stringWithFormat:@"insert into %@(%@) values(%@)",[self.class getTableName],insertKey,insertValuesString];
              BOOL execute = [db executeUpdate:insertSQL withArgumentsInArray:insertValues];
              model.rowid = (int )db.lastInsertRowId;
-             //             if(block != nil)
-             //             {
-             //                 block(execute);
-             //             }
+             if(block != nil)
+             {
+                block(execute);
+             }
              if(execute == NO)
              {
                  NSLog(@"database insert fail %@",NSStringFromClass(model.class));

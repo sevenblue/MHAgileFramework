@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MHRootViewController.h"
+#import "MHFMDBManager.h"
 @interface AppDelegate ()
 @end
 
@@ -17,6 +18,11 @@
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    //初始化数据库
+    [[MHFMDBManager sharedInstance]CreateDataBase];
+    [[MHFMDBManager sharedInstance]CreateTable];
+    
     MHRootViewController *mainViewController = [[MHRootViewController alloc]init];
     self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:mainViewController];;
     self.window.backgroundColor = [UIColor whiteColor];

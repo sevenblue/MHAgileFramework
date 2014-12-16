@@ -10,4 +10,10 @@
 
 @implementation MHJsonModel
 
++ (NSDictionary *)keyDict{
+    NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithDictionary:[super keyDict]];
+    [dict setValue:@"MHElementModel" forKey:@"children"];
+    return dict;
+}
+
 @end

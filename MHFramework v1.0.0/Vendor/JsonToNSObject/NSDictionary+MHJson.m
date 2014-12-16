@@ -40,14 +40,15 @@
         id object = [[aClass alloc] init];
         [rootJsonObj enumerateKeysAndObjectsUsingBlock:^(id key,id obj,BOOL *stop)
          {
-             if ([obj isKindOfClass:[NSArray class]])
+             if ([obj isKindOfClass:[NSArray class]] && [obj count])
              {
-                 NSArray *array = [self jsonDataToNSObjectsClass:NSClassFromString([keyDict valueForKey:key])];
+                 NSArray *array = [obj jsonDataToNSObjectsClass:NSClassFromString([keyDict valueForKey:key])];
+
                  [object setValue:array forKey:key];
              }
              else if([obj isKindOfClass:[NSDictionary class]])
              {
-                 id otherObjct = [[obj JSONString] jsonStringToNSObjectsWithKey:nil andClass:NSClassFromString([keyDict valueForKey:key])];
+                 id otherObjct = [obj jsonDataToNSObjectsClass:NSClassFromString([keyDict valueForKey:key])];
                  [object setValue:otherObjct forKey:key];
              }
              else

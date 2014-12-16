@@ -9,13 +9,7 @@
 /* Begin PBXBuildFile section */
 		8B1596025648C1B94614AB89 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E92288E7E0AD966A26ACB2 /* libPods.a */; };
 		B00688611A3A97BE00038987 /* MHDownloadJsonDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687DC1A3A97BE00038987 /* MHDownloadJsonDataViewController.m */; };
-		B00688621A3A97BE00038987 /* MHLeftSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687DE1A3A97BE00038987 /* MHLeftSliderViewController.m */; };
-		B00688631A3A97BE00038987 /* MHLeftSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00687DF1A3A97BE00038987 /* MHLeftSliderViewController.xib */; };
-		B00688641A3A97BE00038987 /* MHMainInterfaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687E11A3A97BE00038987 /* MHMainInterfaceViewController.m */; };
-		B00688651A3A97BE00038987 /* MHMainInterfaceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00687E21A3A97BE00038987 /* MHMainInterfaceViewController.xib */; };
 		B00688661A3A97BE00038987 /* MHResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687E41A3A97BE00038987 /* MHResumeViewController.m */; };
-		B00688671A3A97BE00038987 /* MHRightSliderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687E61A3A97BE00038987 /* MHRightSliderViewController.m */; };
-		B00688681A3A97BE00038987 /* MHRightSliderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B00687E71A3A97BE00038987 /* MHRightSliderViewController.xib */; };
 		B00688691A3A97BE00038987 /* MHRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687E91A3A97BE00038987 /* MHRootViewController.m */; };
 		B006886A1A3A97BE00038987 /* MHBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687EC1A3A97BE00038987 /* MHBaseDAO.m */; };
 		B006886B1A3A97BE00038987 /* MHDataBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687EE1A3A97BE00038987 /* MHDataBaseDAO.m */; };
@@ -25,7 +19,6 @@
 		B006886F1A3A97BE00038987 /* MHSlidingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687FB1A3A97BE00038987 /* MHSlidingManager.m */; };
 		B00688701A3A97BE00038987 /* MHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687FE1A3A97BE00038987 /* MHBaseModel.m */; };
 		B00688711A3A97BE00038987 /* MHBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688001A3A97BE00038987 /* MHBaseObject.m */; };
-		B00688721A3A97BE00038987 /* MHDownloadTeskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688021A3A97BE00038987 /* MHDownloadTeskModel.m */; };
 		B00688731A3A97BE00038987 /* MHJsonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688041A3A97BE00038987 /* MHJsonDataSource.m */; };
 		B00688741A3A97BE00038987 /* MHJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688061A3A97BE00038987 /* MHJsonModel.m */; };
 		B00688751A3A97BE00038987 /* MHUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688081A3A97BE00038987 /* MHUserInfo.m */; };
@@ -76,6 +69,7 @@
 		B02C05031A1CAB7400305193 /* MHAgileFramework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B02C05011A1CAB7400305193 /* MHAgileFramework.xcdatamodeld */; };
 		B02C050B1A1CAB7400305193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02C050A1A1CAB7400305193 /* Images.xcassets */; };
 		B02C051A1A1CAB7400305193 /* MHAgileFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B02C05191A1CAB7400305193 /* MHAgileFrameworkTests.m */; };
+		B0364BCE1A3EC4800058CDE8 /* MHElementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */; };
 		B0F792141A24996A00D1FAFB /* Note in Resources */ = {isa = PBXBuildFile; fileRef = B0F792131A24996A00D1FAFB /* Note */; };
 /* End PBXBuildFile section */
 
@@ -95,17 +89,8 @@
 		94E92288E7E0AD966A26ACB2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B00687DB1A3A97BE00038987 /* MHDownloadJsonDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDownloadJsonDataViewController.h; sourceTree = "<group>"; };
 		B00687DC1A3A97BE00038987 /* MHDownloadJsonDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDownloadJsonDataViewController.m; sourceTree = "<group>"; };
-		B00687DD1A3A97BE00038987 /* MHLeftSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHLeftSliderViewController.h; sourceTree = "<group>"; };
-		B00687DE1A3A97BE00038987 /* MHLeftSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHLeftSliderViewController.m; sourceTree = "<group>"; };
-		B00687DF1A3A97BE00038987 /* MHLeftSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHLeftSliderViewController.xib; sourceTree = "<group>"; };
-		B00687E01A3A97BE00038987 /* MHMainInterfaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHMainInterfaceViewController.h; sourceTree = "<group>"; };
-		B00687E11A3A97BE00038987 /* MHMainInterfaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHMainInterfaceViewController.m; sourceTree = "<group>"; };
-		B00687E21A3A97BE00038987 /* MHMainInterfaceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHMainInterfaceViewController.xib; sourceTree = "<group>"; };
 		B00687E31A3A97BE00038987 /* MHResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHResumeViewController.h; sourceTree = "<group>"; };
 		B00687E41A3A97BE00038987 /* MHResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHResumeViewController.m; sourceTree = "<group>"; };
-		B00687E51A3A97BE00038987 /* MHRightSliderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHRightSliderViewController.h; sourceTree = "<group>"; };
-		B00687E61A3A97BE00038987 /* MHRightSliderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHRightSliderViewController.m; sourceTree = "<group>"; };
-		B00687E71A3A97BE00038987 /* MHRightSliderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MHRightSliderViewController.xib; sourceTree = "<group>"; };
 		B00687E81A3A97BE00038987 /* MHRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHRootViewController.h; sourceTree = "<group>"; };
 		B00687E91A3A97BE00038987 /* MHRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHRootViewController.m; sourceTree = "<group>"; };
 		B00687EB1A3A97BE00038987 /* MHBaseDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBaseDAO.h; sourceTree = "<group>"; };
@@ -127,8 +112,6 @@
 		B00687FE1A3A97BE00038987 /* MHBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBaseModel.m; sourceTree = "<group>"; };
 		B00687FF1A3A97BE00038987 /* MHBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBaseObject.h; sourceTree = "<group>"; };
 		B00688001A3A97BE00038987 /* MHBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBaseObject.m; sourceTree = "<group>"; };
-		B00688011A3A97BE00038987 /* MHDownloadTeskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDownloadTeskModel.h; sourceTree = "<group>"; };
-		B00688021A3A97BE00038987 /* MHDownloadTeskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDownloadTeskModel.m; sourceTree = "<group>"; };
 		B00688031A3A97BE00038987 /* MHJsonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHJsonDataSource.h; path = ../../Model/MHJsonDataSource.h; sourceTree = "<group>"; };
 		B00688041A3A97BE00038987 /* MHJsonDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHJsonDataSource.m; path = ../../Model/MHJsonDataSource.m; sourceTree = "<group>"; };
 		B00688051A3A97BE00038987 /* MHJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHJsonModel.h; sourceTree = "<group>"; };
@@ -209,7 +192,7 @@
 		B006885F1A3A97BE00038987 /* MHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHButton.h; sourceTree = "<group>"; };
 		B00688601A3A97BE00038987 /* MHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHButton.m; sourceTree = "<group>"; };
 		B006889E1A3A992400038987 /* TestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProtocol.h; sourceTree = "<group>"; };
-		B006889F1A3AA0F400038987 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B006889F1A3AA0F400038987 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		B00688A41A3AD49400038987 /* NSArray+MHJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MHJson.h"; sourceTree = "<group>"; };
 		B00688A51A3AD49400038987 /* NSArray+MHJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHJson.m"; sourceTree = "<group>"; };
 		B00688A71A3AD4A700038987 /* NSDictionary+MHJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MHJson.h"; sourceTree = "<group>"; };
@@ -225,6 +208,8 @@
 		B02C05181A1CAB7400305193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02C05191A1CAB7400305193 /* MHAgileFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHAgileFrameworkTests.m; sourceTree = "<group>"; };
 		B02C05B71A1DC59900305193 /* MHPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHPrefixHeader.pch; sourceTree = "<group>"; };
+		B0364BCC1A3EC4800058CDE8 /* MHElementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHElementModel.h; sourceTree = "<group>"; };
+		B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHElementModel.m; sourceTree = "<group>"; };
 		B0F792131A24996A00D1FAFB /* Note */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Note; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -250,16 +235,16 @@
 		B00687D91A3A97BE00038987 /* MHFramework v1.0.0 */ = {
 			isa = PBXGroup;
 			children = (
-				B00687DA1A3A97BE00038987 /* Controller */,
-				B00687EA1A3A97BE00038987 /* DAO */,
 				B00687EF1A3A97BE00038987 /* Define */,
+				B00687EA1A3A97BE00038987 /* DAO */,
 				B00687F31A3A97BE00038987 /* Manager */,
+				B00688121A3A97BE00038987 /* Base */,
 				B00687FC1A3A97BE00038987 /* Model */,
-				B00688091A3A97BE00038987 /* Resource */,
-				B00688121A3A97BE00038987 /* UIBaseVC */,
+				B00687DA1A3A97BE00038987 /* Controller */,
+				B006885E1A3A97BE00038987 /* View */,
 				B00688191A3A97BE00038987 /* Util */,
 				B006883A1A3A97BE00038987 /* Vendor */,
-				B006885E1A3A97BE00038987 /* View */,
+				B00688091A3A97BE00038987 /* Resource */,
 			);
 			name = "MHFramework v1.0.0";
 			path = "../MHFramework v1.0.0";
@@ -268,19 +253,10 @@
 		B00687DA1A3A97BE00038987 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B00687DD1A3A97BE00038987 /* MHLeftSliderViewController.h */,
-				B00687DE1A3A97BE00038987 /* MHLeftSliderViewController.m */,
-				B00687DF1A3A97BE00038987 /* MHLeftSliderViewController.xib */,
-				B00687E01A3A97BE00038987 /* MHMainInterfaceViewController.h */,
-				B00687E11A3A97BE00038987 /* MHMainInterfaceViewController.m */,
-				B00687E21A3A97BE00038987 /* MHMainInterfaceViewController.xib */,
-				B00687E31A3A97BE00038987 /* MHResumeViewController.h */,
-				B00687E41A3A97BE00038987 /* MHResumeViewController.m */,
-				B00687E51A3A97BE00038987 /* MHRightSliderViewController.h */,
-				B00687E61A3A97BE00038987 /* MHRightSliderViewController.m */,
-				B00687E71A3A97BE00038987 /* MHRightSliderViewController.xib */,
 				B00687E81A3A97BE00038987 /* MHRootViewController.h */,
 				B00687E91A3A97BE00038987 /* MHRootViewController.m */,
+				B00687E31A3A97BE00038987 /* MHResumeViewController.h */,
+				B00687E41A3A97BE00038987 /* MHResumeViewController.m */,
 				B00687DB1A3A97BE00038987 /* MHDownloadJsonDataViewController.h */,
 				B00687DC1A3A97BE00038987 /* MHDownloadJsonDataViewController.m */,
 			);
@@ -326,14 +302,11 @@
 		B00687FC1A3A97BE00038987 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B00687FD1A3A97BE00038987 /* MHBaseModel.h */,
-				B00687FE1A3A97BE00038987 /* MHBaseModel.m */,
-				B00687FF1A3A97BE00038987 /* MHBaseObject.h */,
-				B00688001A3A97BE00038987 /* MHBaseObject.m */,
-				B00688011A3A97BE00038987 /* MHDownloadTeskModel.h */,
-				B00688021A3A97BE00038987 /* MHDownloadTeskModel.m */,
+				B0364BD01A3ED95F0058CDE8 /* Base */,
 				B00688051A3A97BE00038987 /* MHJsonModel.h */,
 				B00688061A3A97BE00038987 /* MHJsonModel.m */,
+				B0364BCC1A3EC4800058CDE8 /* MHElementModel.h */,
+				B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */,
 				B00688071A3A97BE00038987 /* MHUserInfo.h */,
 				B00688081A3A97BE00038987 /* MHUserInfo.m */,
 			);
@@ -376,7 +349,7 @@
 			path = NavigationBar;
 			sourceTree = "<group>";
 		};
-		B00688121A3A97BE00038987 /* UIBaseVC */ = {
+		B00688121A3A97BE00038987 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				B00688131A3A97BE00038987 /* MHBaseTableViewController.h */,
@@ -386,6 +359,7 @@
 				B00688171A3A97BE00038987 /* MHBaseViewController.h */,
 				B00688181A3A97BE00038987 /* MHBaseViewController.m */,
 			);
+			name = Base;
 			path = UIBaseVC;
 			sourceTree = "<group>";
 		};
@@ -537,7 +511,6 @@
 		B02C04EE1A1CAB7400305193 = {
 			isa = PBXGroup;
 			children = (
-				B006889F1A3AA0F400038987 /* Default-568h@2x.png */,
 				B0F792131A24996A00D1FAFB /* Note */,
 				B02C04F91A1CAB7400305193 /* MHAgileFramework */,
 				B02C05161A1CAB7400305193 /* MHAgileFrameworkTests */,
@@ -570,6 +543,7 @@
 		B02C04FA1A1CAB7400305193 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B006889F1A3AA0F400038987 /* Default-568h@2x.png */,
 				B006889E1A3A992400038987 /* TestProtocol.h */,
 				B02C05B71A1DC59900305193 /* MHPrefixHeader.pch */,
 				B02C050A1A1CAB7400305193 /* Images.xcassets */,
@@ -595,6 +569,17 @@
 				B02C05181A1CAB7400305193 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B0364BD01A3ED95F0058CDE8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B00687FF1A3A97BE00038987 /* MHBaseObject.h */,
+				B00688001A3A97BE00038987 /* MHBaseObject.m */,
+				B00687FD1A3A97BE00038987 /* MHBaseModel.h */,
+				B00687FE1A3A97BE00038987 /* MHBaseModel.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		C0DF8EA4A793838B246EA3ED /* Frameworks */ = {
@@ -699,15 +684,12 @@
 				B006887A1A3A97BE00038987 /* navi_btn_right@2x.png in Resources */,
 				B0F792141A24996A00D1FAFB /* Note in Resources */,
 				B00688951A3A97BE00038987 /* MJRefresh.bundle in Resources */,
-				B00688631A3A97BE00038987 /* MHLeftSliderViewController.xib in Resources */,
-				B00688681A3A97BE00038987 /* MHRightSliderViewController.xib in Resources */,
 				B00688A01A3AA0F400038987 /* Default-568h@2x.png in Resources */,
 				B00688761A3A97BE00038987 /* profundity_content.css in Resources */,
 				B02C050B1A1CAB7400305193 /* Images.xcassets in Resources */,
 				B00688791A3A97BE00038987 /* navi_btn_left@2x.png in Resources */,
 				B00688771A3A97BE00038987 /* profundity_content.js in Resources */,
 				B00688781A3A97BE00038987 /* profundity_content_template.html in Resources */,
-				B00688651A3A97BE00038987 /* MHMainInterfaceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -775,20 +757,19 @@
 				B00688711A3A97BE00038987 /* MHBaseObject.m in Sources */,
 				B006887F1A3A97BE00038987 /* NSMutableArray+AddObject.m in Sources */,
 				B006888A1A3A97BE00038987 /* MHMD5.m in Sources */,
-				B00688721A3A97BE00038987 /* MHDownloadTeskModel.m in Sources */,
 				B006889A1A3A97BE00038987 /* XLCycleScrollView.m in Sources */,
 				B006886B1A3A97BE00038987 /* MHDataBaseDAO.m in Sources */,
 				B00688901A3A97BE00038987 /* NSStringAdditions.m in Sources */,
 				B006886F1A3A97BE00038987 /* MHSlidingManager.m in Sources */,
 				B006886D1A3A97BE00038987 /* MHDownloadHelper.m in Sources */,
 				B006887B1A3A97BE00038987 /* MHBaseTableViewController.m in Sources */,
+				B0364BCE1A3EC4800058CDE8 /* MHElementModel.m in Sources */,
 				B006887D1A3A97BE00038987 /* MHBaseViewController.m in Sources */,
 				B00688861A3A97BE00038987 /* UIImageView+LBBlurredImage.m in Sources */,
 				B00688971A3A97BE00038987 /* MJRefreshConst.m in Sources */,
 				B00688691A3A97BE00038987 /* MHRootViewController.m in Sources */,
 				B00688881A3A97BE00038987 /* UIView+NIBView.m in Sources */,
 				B006887C1A3A97BE00038987 /* MHBaseViewController+NavigationBar.m in Sources */,
-				B00688641A3A97BE00038987 /* MHMainInterfaceViewController.m in Sources */,
 				B006887E1A3A97BE00038987 /* AFHTTPRequestOperation+TaskInfo.m in Sources */,
 				B006889C1A3A97BE00038987 /* MHButton.m in Sources */,
 				B00688741A3A97BE00038987 /* MHJsonModel.m in Sources */,
@@ -805,10 +786,8 @@
 				B00688821A3A97BE00038987 /* NSString+JudgeIfEmpty.m in Sources */,
 				B00688871A3A97BE00038987 /* UIView+FindFirstResponder.m in Sources */,
 				B00688981A3A97BE00038987 /* MJRefreshFooterView.m in Sources */,
-				B00688621A3A97BE00038987 /* MHLeftSliderViewController.m in Sources */,
 				B00688611A3A97BE00038987 /* MHDownloadJsonDataViewController.m in Sources */,
 				B006888E1A3A97BE00038987 /* NSDictionary+Devil.m in Sources */,
-				B00688671A3A97BE00038987 /* MHRightSliderViewController.m in Sources */,
 				B00688701A3A97BE00038987 /* MHBaseModel.m in Sources */,
 				B00688931A3A97BE00038987 /* NSData+IJson.m in Sources */,
 				B02C04FD1A1CAB7400305193 /* main.m in Sources */,

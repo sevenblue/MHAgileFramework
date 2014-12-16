@@ -11,4 +11,5 @@
 @interface BaseNSObject : NSObject
 
 + (NSDictionary *)keyDict;
+
 @end
