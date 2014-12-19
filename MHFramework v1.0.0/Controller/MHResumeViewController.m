@@ -11,7 +11,7 @@
 
 #define KEY_TASKID_MP3  @"KEY_TASKID_MP3"
 
-@interface MHResumeViewController ()
+@interface MHResumeViewController ()<NSURLConnectionDataDelegate>
 {
     UIProgressView *_progressV;
     UILabel *_progressLabel;
@@ -53,7 +53,35 @@
     btn.frame = CGRectMake(110, 200, 80, 40);
     [btn addTarget:self action:@selector(downloadAction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
+    
+    NSURLConnection *connection = [[NSURLConnection alloc]initWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://graph.z.qq.com/moc2/authorize?response_type=code&client_id=200004&redirect_uri=http://www.youku.com&state=test&display=mobile&g_ut=2"]] delegate:self];
+    [connection start];
 }
+
+#pragma mark - 
+- (BOOL)connection:(NSURLConnection *)connection canAuthenticateAgainstProtectionSpace:(NSURLProtectionSpace *)protectionSpace {
+    return [protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge {
+    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]){
+        [[challenge sender] useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
+        [[challenge sender] continueWithoutCredentialForAuthenticationChallenge: challenge];
+    }
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection{
+//    [self.webView loadRequest:_riginRequest];
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
+    
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
+    
+}
+#pragma mark -
 
 - (void)downloadAction:(UIButton *)btn
 {
