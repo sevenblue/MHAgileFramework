@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "MHRootViewController.h"
 #import "MHFMDBManager.h"
-@interface AppDelegate ()
+@interface AppDelegate ()<NSURLConnectionDataDelegate>
+
 @end
 
 @implementation AppDelegate
@@ -24,12 +25,14 @@
     [[MHFMDBManager sharedInstance]CreateTable];
     
     MHRootViewController *mainViewController = [[MHRootViewController alloc]init];
+    
     self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:mainViewController];;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

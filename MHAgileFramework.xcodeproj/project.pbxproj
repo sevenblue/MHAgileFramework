@@ -68,20 +68,10 @@
 		B02C05001A1CAB7400305193 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B02C04FF1A1CAB7400305193 /* AppDelegate.m */; };
 		B02C05031A1CAB7400305193 /* MHAgileFramework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B02C05011A1CAB7400305193 /* MHAgileFramework.xcdatamodeld */; };
 		B02C050B1A1CAB7400305193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02C050A1A1CAB7400305193 /* Images.xcassets */; };
-		B02C051A1A1CAB7400305193 /* MHAgileFrameworkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B02C05191A1CAB7400305193 /* MHAgileFrameworkTests.m */; };
 		B0364BCE1A3EC4800058CDE8 /* MHElementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */; };
+		B06B19351A47E3E9006FB56D /* MHSSLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B19341A47E3E9006FB56D /* MHSSLWebViewController.m */; };
 		B0F792141A24996A00D1FAFB /* Note in Resources */ = {isa = PBXBuildFile; fileRef = B0F792131A24996A00D1FAFB /* Note */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		B02C05141A1CAB7400305193 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B02C04EF1A1CAB7400305193 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B02C04F61A1CAB7400305193;
-			remoteInfo = MHAgileFramework;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		165541709DDCBC5C8F84B9A8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,12 +194,13 @@
 		B02C04FF1A1CAB7400305193 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B02C05021A1CAB7400305193 /* MHAgileFramework.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MHAgileFramework.xcdatamodel; sourceTree = "<group>"; };
 		B02C050A1A1CAB7400305193 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		B02C05131A1CAB7400305193 /* MHAgileFrameworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MHAgileFrameworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B02C05181A1CAB7400305193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02C05191A1CAB7400305193 /* MHAgileFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHAgileFrameworkTests.m; sourceTree = "<group>"; };
 		B02C05B71A1DC59900305193 /* MHPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHPrefixHeader.pch; sourceTree = "<group>"; };
 		B0364BCC1A3EC4800058CDE8 /* MHElementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHElementModel.h; sourceTree = "<group>"; };
 		B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHElementModel.m; sourceTree = "<group>"; };
+		B06B19331A47E3E9006FB56D /* MHSSLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHSSLWebViewController.h; sourceTree = "<group>"; };
+		B06B19341A47E3E9006FB56D /* MHSSLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHSSLWebViewController.m; sourceTree = "<group>"; };
 		B0F792131A24996A00D1FAFB /* Note */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Note; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -219,13 +210,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B1596025648C1B94614AB89 /* libPods.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B02C05101A1CAB7400305193 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +243,8 @@
 				B00687E41A3A97BE00038987 /* MHResumeViewController.m */,
 				B00687DB1A3A97BE00038987 /* MHDownloadJsonDataViewController.h */,
 				B00687DC1A3A97BE00038987 /* MHDownloadJsonDataViewController.m */,
+				B06B19331A47E3E9006FB56D /* MHSSLWebViewController.h */,
+				B06B19341A47E3E9006FB56D /* MHSSLWebViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -287,10 +273,9 @@
 		B00687F31A3A97BE00038987 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B06B19361A47F7FF006FB56D /* Helper */,
 				B00687F41A3A97BE00038987 /* MHAFNetworkingManager.h */,
 				B00687F51A3A97BE00038987 /* MHAFNetworkingManager.m */,
-				B00687F61A3A97BE00038987 /* MHDownloadHelper.h */,
-				B00687F71A3A97BE00038987 /* MHDownloadHelper.m */,
 				B00687F81A3A97BE00038987 /* MHFMDBManager.h */,
 				B00687F91A3A97BE00038987 /* MHFMDBManager.m */,
 				B00687FA1A3A97BE00038987 /* MHSlidingManager.h */,
@@ -524,7 +509,6 @@
 			isa = PBXGroup;
 			children = (
 				B02C04F71A1CAB7400305193 /* MHAgileFramework.app */,
-				B02C05131A1CAB7400305193 /* MHAgileFrameworkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -582,6 +566,15 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		B06B19361A47F7FF006FB56D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				B00687F61A3A97BE00038987 /* MHDownloadHelper.h */,
+				B00687F71A3A97BE00038987 /* MHDownloadHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		C0DF8EA4A793838B246EA3ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,24 +614,6 @@
 			productReference = B02C04F71A1CAB7400305193 /* MHAgileFramework.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B02C05121A1CAB7400305193 /* MHAgileFrameworkTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B02C05201A1CAB7400305193 /* Build configuration list for PBXNativeTarget "MHAgileFrameworkTests" */;
-			buildPhases = (
-				B02C050F1A1CAB7400305193 /* Sources */,
-				B02C05101A1CAB7400305193 /* Frameworks */,
-				B02C05111A1CAB7400305193 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B02C05151A1CAB7400305193 /* PBXTargetDependency */,
-			);
-			name = MHAgileFrameworkTests;
-			productName = MHAgileFrameworkTests;
-			productReference = B02C05131A1CAB7400305193 /* MHAgileFrameworkTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -650,10 +625,6 @@
 				TargetAttributes = {
 					B02C04F61A1CAB7400305193 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					B02C05121A1CAB7400305193 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = B02C04F61A1CAB7400305193;
 					};
 				};
 			};
@@ -671,7 +642,6 @@
 			projectRoot = "";
 			targets = (
 				B02C04F61A1CAB7400305193 /* MHAgileFramework */,
-				B02C05121A1CAB7400305193 /* MHAgileFrameworkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -690,13 +660,6 @@
 				B00688791A3A97BE00038987 /* navi_btn_left@2x.png in Resources */,
 				B00688771A3A97BE00038987 /* profundity_content.js in Resources */,
 				B00688781A3A97BE00038987 /* profundity_content_template.html in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B02C05111A1CAB7400305193 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -755,6 +718,7 @@
 				B02C05001A1CAB7400305193 /* AppDelegate.m in Sources */,
 				B006886A1A3A97BE00038987 /* MHBaseDAO.m in Sources */,
 				B00688711A3A97BE00038987 /* MHBaseObject.m in Sources */,
+				B06B19351A47E3E9006FB56D /* MHSSLWebViewController.m in Sources */,
 				B006887F1A3A97BE00038987 /* NSMutableArray+AddObject.m in Sources */,
 				B006888A1A3A97BE00038987 /* MHMD5.m in Sources */,
 				B006889A1A3A97BE00038987 /* XLCycleScrollView.m in Sources */,
@@ -796,23 +760,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B02C050F1A1CAB7400305193 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B02C051A1A1CAB7400305193 /* MHAgileFrameworkTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B02C05151A1CAB7400305193 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B02C04F61A1CAB7400305193 /* MHAgileFramework */;
-			targetProxy = B02C05141A1CAB7400305193 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B02C051B1A1CAB7400305193 /* Debug */ = {
@@ -832,7 +780,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Fan (QJ95ECKTAY)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -853,6 +802,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "b292eb09-73c1-4f08-bd0b-3a62b1842705";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -875,7 +825,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Youku.com Inc. (4S68FLC2TS)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -889,6 +840,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "4b0cc443-ae18-4048-80ae-3cde1d43add5";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -901,6 +853,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Fan (QJ95ECKTAY)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MHAgileFramework/MHPrefixHeader.pch";
 				INFOPLIST_FILE = MHAgileFramework/Info.plist;
@@ -915,47 +868,14 @@
 			baseConfigurationReference = 29CA0C15026F2E8B4630F296 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Youku.com Inc. (4S68FLC2TS)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/MHAgileFramework/MHPrefixHeader.pch";
 				INFOPLIST_FILE = MHAgileFramework/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B02C05211A1CAB7400305193 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MHAgileFrameworkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MHAgileFramework.app/MHAgileFramework";
-			};
-			name = Debug;
-		};
-		B02C05221A1CAB7400305193 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = MHAgileFrameworkTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MHAgileFramework.app/MHAgileFramework";
 			};
 			name = Release;
 		};
@@ -976,15 +896,6 @@
 			buildConfigurations = (
 				B02C051E1A1CAB7400305193 /* Debug */,
 				B02C051F1A1CAB7400305193 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B02C05201A1CAB7400305193 /* Build configuration list for PBXNativeTarget "MHAgileFrameworkTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B02C05211A1CAB7400305193 /* Debug */,
-				B02C05221A1CAB7400305193 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

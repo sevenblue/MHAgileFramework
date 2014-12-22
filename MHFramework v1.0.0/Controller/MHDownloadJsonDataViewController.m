@@ -21,12 +21,9 @@
     [self setTitle:@"Json下载"];
     
     //btn : push to download json data vc
-    UIButton *downloadJsonBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [downloadJsonBtn setTitle:@"Download" forState:UIControlStateNormal];
-    downloadJsonBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    downloadJsonBtn.backgroundColor = [UIColor grayColor];
-    downloadJsonBtn.frame = CGRectMake(90, 180, 120, 40);
-    [downloadJsonBtn addTarget:self action:@selector(downLoadJson:) forControlEvents:UIControlEventTouchUpInside];
+    MHButton *downloadJsonBtn = [MHButton normalButtonWithTitle:@"Download" frame:CGRectMake(90, 180, 120, 40) action:^(MHButton *btn) {
+        [self downLoadJson:btn];
+    }];
     [self.view addSubview:downloadJsonBtn];
 }
 
@@ -45,9 +42,10 @@
                     NSArray * modelList = [MHJsonDataSource jsonDataToNSObjectsWithResponseObject:responseObject andClass:[MHJsonModel class]];
                     NSLog(@"%@",modelList);
                     
-                    /*  save to DB  */
+                    /*  #TODO save to DB
                     NSArray *arr = @[@"aaa",@"bbbb",@"cccc"];
                     [[MHFMDBManager sharedInstance]insertToDBWithModelList:arr inDB:@"globle_tables"];
+                     */
                 }
                 
             }

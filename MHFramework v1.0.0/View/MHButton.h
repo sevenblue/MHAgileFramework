@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class MHButton;
+
+typedef void(^MHButtonBlock)(MHButton *btn);
+
 @interface MHButton : UIButton
+
+- (void)setAction:(MHButtonBlock)block;
+
++ (MHButton *)normalButtonWithTitle:(NSString *)title frame:(CGRect)frame action:(MHButtonBlock)block;
 
 @end

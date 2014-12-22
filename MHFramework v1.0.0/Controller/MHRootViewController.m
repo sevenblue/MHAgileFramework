@@ -9,6 +9,7 @@
 #import "MHRootViewController.h"
 #import "MHResumeViewController.h"
 #import "MHDownloadJsonDataViewController.h"
+#import "MHSSLWebViewController.h"
 
 @implementation MHRootViewController
 
@@ -18,32 +19,35 @@
 
 - (void)addUI{
     //btn : push to resume download vc
-    UIButton *resumeBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [resumeBtn setTitle:@"离线下载" forState:UIControlStateNormal];
-    resumeBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    resumeBtn.backgroundColor = [UIColor grayColor];
-    resumeBtn.frame = CGRectMake(90, 100, 120, 40);
-    [resumeBtn addTarget:self action:@selector(showResumeDownloadPage:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:resumeBtn];
+    MHButton *resumeBtn = [MHButton normalButtonWithTitle:@"离线下载"
+                                                    frame:CGRectMake(90, 100, 120, 40)
+                                                   action:^(MHButton *btn)
+    {
+        MHResumeViewController *resumeVC = [[MHResumeViewController alloc]init];
+        [self.navigationController pushViewController:resumeVC animated:YES];
+    }];
     
     //btn : push to download json data vc
-    UIButton *downloadJsonBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [downloadJsonBtn setTitle:@"Download Json" forState:UIControlStateNormal];
-    downloadJsonBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
-    downloadJsonBtn.backgroundColor = [UIColor grayColor];
-    downloadJsonBtn.frame = CGRectMake(90, 180, 120, 40);
-    [downloadJsonBtn addTarget:self action:@selector(showDownloadJsonDataPage:) forControlEvents:UIControlEventTouchUpInside];
+    MHButton *downloadJsonBtn = [MHButton normalButtonWithTitle:@"Download Json"
+                                                    frame:CGRectMake(90, 180, 120, 40)
+                                                   action:^(MHButton *btn)
+                           {
+                               MHDownloadJsonDataViewController *downloadJsonVC = [[MHDownloadJsonDataViewController alloc]init];
+                               [self.navigationController pushViewController:downloadJsonVC animated:YES];
+                           }];
+    
+    //btn : push to SSL web vc
+    MHButton *sslWapBtn = [MHButton normalButtonWithTitle:@"SSLWap"
+                                                    frame:CGRectMake(90, 260, 120, 40)
+                                                   action:^(MHButton *btn)
+                           {
+                               MHSSLWebViewController *sslWebVC = [[MHSSLWebViewController alloc]init];
+                               [self.navigationController pushViewController:sslWebVC animated:YES];
+                           }];
+    
+    [self.view addSubview:resumeBtn];
     [self.view addSubview:downloadJsonBtn];
-}
-
-- (void)showResumeDownloadPage:(id)sender{
-    MHResumeViewController *resumeVC = [[MHResumeViewController alloc]init];
-    [self.navigationController pushViewController:resumeVC animated:YES];
-}
-
-- (void)showDownloadJsonDataPage:(id)sender{
-    MHDownloadJsonDataViewController *downloadJsonVC = [[MHDownloadJsonDataViewController alloc]init];
-    [self.navigationController pushViewController:downloadJsonVC animated:YES];
+    [self.view addSubview:sslWapBtn];
 }
 
 - (void)didReceiveMemoryWarning {
