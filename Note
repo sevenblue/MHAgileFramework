@@ -1,5 +1,12 @@
 //TODO
-1.断点续传
+1.加入CoreData缓存方案
+2.常用控件封装，button、alert..
+3.UI控制层封装
 
 //-A
-1.解决AFNetworking线程cancle
+1.BaseVC、TableVC
+2.SlidingManager、FMDBManager、AFNetworkingManager
+3.DAO
+4.数据解析方案:Json To Object
+5.AFNetworking断点续传
+

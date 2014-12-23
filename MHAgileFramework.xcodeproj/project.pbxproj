@@ -22,11 +22,6 @@
 		B00688731A3A97BE00038987 /* MHJsonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688041A3A97BE00038987 /* MHJsonDataSource.m */; };
 		B00688741A3A97BE00038987 /* MHJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688061A3A97BE00038987 /* MHJsonModel.m */; };
 		B00688751A3A97BE00038987 /* MHUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688081A3A97BE00038987 /* MHUserInfo.m */; };
-		B00688761A3A97BE00038987 /* profundity_content.css in Resources */ = {isa = PBXBuildFile; fileRef = B006880B1A3A97BE00038987 /* profundity_content.css */; };
-		B00688771A3A97BE00038987 /* profundity_content.js in Resources */ = {isa = PBXBuildFile; fileRef = B006880C1A3A97BE00038987 /* profundity_content.js */; };
-		B00688781A3A97BE00038987 /* profundity_content_template.html in Resources */ = {isa = PBXBuildFile; fileRef = B006880D1A3A97BE00038987 /* profundity_content_template.html */; };
-		B00688791A3A97BE00038987 /* navi_btn_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B00688101A3A97BE00038987 /* navi_btn_left@2x.png */; };
-		B006887A1A3A97BE00038987 /* navi_btn_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B00688111A3A97BE00038987 /* navi_btn_right@2x.png */; };
 		B006887B1A3A97BE00038987 /* MHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688141A3A97BE00038987 /* MHBaseTableViewController.m */; };
 		B006887C1A3A97BE00038987 /* MHBaseViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688161A3A97BE00038987 /* MHBaseViewController+NavigationBar.m */; };
 		B006887D1A3A97BE00038987 /* MHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688181A3A97BE00038987 /* MHBaseViewController.m */; };
@@ -61,7 +56,6 @@
 		B006889A1A3A97BE00038987 /* XLCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B006885A1A3A97BE00038987 /* XLCycleScrollView.m */; };
 		B006889B1A3A97BE00038987 /* YRSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006885D1A3A97BE00038987 /* YRSideViewController.m */; };
 		B006889C1A3A97BE00038987 /* MHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688601A3A97BE00038987 /* MHButton.m */; };
-		B00688A01A3AA0F400038987 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B006889F1A3AA0F400038987 /* Default-568h@2x.png */; };
 		B00688A61A3AD49400038987 /* NSArray+MHJson.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688A51A3AD49400038987 /* NSArray+MHJson.m */; };
 		B00688A91A3AD4A700038987 /* NSDictionary+MHJson.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688A81A3AD4A700038987 /* NSDictionary+MHJson.m */; };
 		B02C04FD1A1CAB7400305193 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B02C04FC1A1CAB7400305193 /* main.m */; };
@@ -70,6 +64,8 @@
 		B02C050B1A1CAB7400305193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02C050A1A1CAB7400305193 /* Images.xcassets */; };
 		B0364BCE1A3EC4800058CDE8 /* MHElementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */; };
 		B06B19351A47E3E9006FB56D /* MHSSLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B19341A47E3E9006FB56D /* MHSSLWebViewController.m */; };
+		B06B193A1A496224006FB56D /* MHAgile.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B06B19391A496224006FB56D /* MHAgile.bundle */; };
+		B06B193D1A4962B6006FB56D /* UIImage+bundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B193C1A4962B6006FB56D /* UIImage+bundleImage.m */; };
 		B0F792141A24996A00D1FAFB /* Note in Resources */ = {isa = PBXBuildFile; fileRef = B0F792131A24996A00D1FAFB /* Note */; };
 /* End PBXBuildFile section */
 
@@ -108,11 +104,6 @@
 		B00688061A3A97BE00038987 /* MHJsonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHJsonModel.m; sourceTree = "<group>"; };
 		B00688071A3A97BE00038987 /* MHUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHUserInfo.h; sourceTree = "<group>"; };
 		B00688081A3A97BE00038987 /* MHUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHUserInfo.m; sourceTree = "<group>"; };
-		B006880B1A3A97BE00038987 /* profundity_content.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = profundity_content.css; sourceTree = "<group>"; };
-		B006880C1A3A97BE00038987 /* profundity_content.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = profundity_content.js; sourceTree = "<group>"; };
-		B006880D1A3A97BE00038987 /* profundity_content_template.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = profundity_content_template.html; sourceTree = "<group>"; };
-		B00688101A3A97BE00038987 /* navi_btn_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_left@2x.png"; sourceTree = "<group>"; };
-		B00688111A3A97BE00038987 /* navi_btn_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navi_btn_right@2x.png"; sourceTree = "<group>"; };
 		B00688131A3A97BE00038987 /* MHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBaseTableViewController.h; sourceTree = "<group>"; };
 		B00688141A3A97BE00038987 /* MHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBaseTableViewController.m; sourceTree = "<group>"; };
 		B00688151A3A97BE00038987 /* MHBaseViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MHBaseViewController+NavigationBar.h"; sourceTree = "<group>"; };
@@ -182,7 +173,6 @@
 		B006885F1A3A97BE00038987 /* MHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHButton.h; sourceTree = "<group>"; };
 		B00688601A3A97BE00038987 /* MHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHButton.m; sourceTree = "<group>"; };
 		B006889E1A3A992400038987 /* TestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProtocol.h; sourceTree = "<group>"; };
-		B006889F1A3AA0F400038987 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		B00688A41A3AD49400038987 /* NSArray+MHJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MHJson.h"; sourceTree = "<group>"; };
 		B00688A51A3AD49400038987 /* NSArray+MHJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHJson.m"; sourceTree = "<group>"; };
 		B00688A71A3AD4A700038987 /* NSDictionary+MHJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MHJson.h"; sourceTree = "<group>"; };
@@ -201,6 +191,9 @@
 		B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHElementModel.m; sourceTree = "<group>"; };
 		B06B19331A47E3E9006FB56D /* MHSSLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHSSLWebViewController.h; sourceTree = "<group>"; };
 		B06B19341A47E3E9006FB56D /* MHSSLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHSSLWebViewController.m; sourceTree = "<group>"; };
+		B06B19391A496224006FB56D /* MHAgile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MHAgile.bundle; sourceTree = "<group>"; };
+		B06B193B1A4962B6006FB56D /* UIImage+bundleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+bundleImage.h"; sourceTree = "<group>"; };
+		B06B193C1A4962B6006FB56D /* UIImage+bundleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+bundleImage.m"; sourceTree = "<group>"; };
 		B0F792131A24996A00D1FAFB /* Note */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Note; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -301,37 +294,16 @@
 		B00688091A3A97BE00038987 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				B006880A1A3A97BE00038987 /* HTML_CSS */,
 				B006880E1A3A97BE00038987 /* ImageSource */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
 		};
-		B006880A1A3A97BE00038987 /* HTML_CSS */ = {
-			isa = PBXGroup;
-			children = (
-				B006880B1A3A97BE00038987 /* profundity_content.css */,
-				B006880C1A3A97BE00038987 /* profundity_content.js */,
-				B006880D1A3A97BE00038987 /* profundity_content_template.html */,
-			);
-			path = HTML_CSS;
-			sourceTree = "<group>";
-		};
 		B006880E1A3A97BE00038987 /* ImageSource */ = {
 			isa = PBXGroup;
 			children = (
-				B006880F1A3A97BE00038987 /* NavigationBar */,
 			);
 			path = ImageSource;
-			sourceTree = "<group>";
-		};
-		B006880F1A3A97BE00038987 /* NavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				B00688101A3A97BE00038987 /* navi_btn_left@2x.png */,
-				B00688111A3A97BE00038987 /* navi_btn_right@2x.png */,
-			);
-			path = NavigationBar;
 			sourceTree = "<group>";
 		};
 		B00688121A3A97BE00038987 /* Base */ = {
@@ -384,6 +356,8 @@
 				B00688301A3A97BE00038987 /* UIView+NIBView.m */,
 				B00688311A3A97BE00038987 /* UIViewController+MHViewExtend.h */,
 				B00688321A3A97BE00038987 /* UIViewController+MHViewExtend.m */,
+				B06B193B1A4962B6006FB56D /* UIImage+bundleImage.h */,
+				B06B193C1A4962B6006FB56D /* UIImage+bundleImage.m */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -527,7 +501,7 @@
 		B02C04FA1A1CAB7400305193 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B006889F1A3AA0F400038987 /* Default-568h@2x.png */,
+				B06B19391A496224006FB56D /* MHAgile.bundle */,
 				B006889E1A3A992400038987 /* TestProtocol.h */,
 				B02C05B71A1DC59900305193 /* MHPrefixHeader.pch */,
 				B02C050A1A1CAB7400305193 /* Images.xcassets */,
@@ -651,15 +625,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B006887A1A3A97BE00038987 /* navi_btn_right@2x.png in Resources */,
+				B06B193A1A496224006FB56D /* MHAgile.bundle in Resources */,
 				B0F792141A24996A00D1FAFB /* Note in Resources */,
 				B00688951A3A97BE00038987 /* MJRefresh.bundle in Resources */,
-				B00688A01A3AA0F400038987 /* Default-568h@2x.png in Resources */,
-				B00688761A3A97BE00038987 /* profundity_content.css in Resources */,
 				B02C050B1A1CAB7400305193 /* Images.xcassets in Resources */,
-				B00688791A3A97BE00038987 /* navi_btn_left@2x.png in Resources */,
-				B00688771A3A97BE00038987 /* profundity_content.js in Resources */,
-				B00688781A3A97BE00038987 /* profundity_content_template.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +719,7 @@
 				B00688821A3A97BE00038987 /* NSString+JudgeIfEmpty.m in Sources */,
 				B00688871A3A97BE00038987 /* UIView+FindFirstResponder.m in Sources */,
 				B00688981A3A97BE00038987 /* MJRefreshFooterView.m in Sources */,
+				B06B193D1A4962B6006FB56D /* UIImage+bundleImage.m in Sources */,
 				B00688611A3A97BE00038987 /* MHDownloadJsonDataViewController.m in Sources */,
 				B006888E1A3A97BE00038987 /* NSDictionary+Devil.m in Sources */,
 				B00688701A3A97BE00038987 /* MHBaseModel.m in Sources */,
