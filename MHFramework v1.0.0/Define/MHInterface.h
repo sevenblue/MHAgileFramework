@@ -7,7 +7,6 @@
 //
 //公共类interface
 #import "MHAFNetWorkingManager.h"
-#import "MHUserInfo.h"
 #import "MHBaseModel.h"
 #import "MHSlidingManager.h"
 #import "MHBaseViewController+NavigationBar.h"

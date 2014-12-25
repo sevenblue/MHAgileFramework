@@ -9,7 +9,6 @@
 #import "MHRootViewController.h"
 #import "MHResumeViewController.h"
 #import "MHDownloadJsonDataViewController.h"
-#import "MHSSLWebViewController.h"
 
 @implementation MHRootViewController
 
@@ -36,18 +35,8 @@
                                [self.navigationController pushViewController:downloadJsonVC animated:YES];
                            }];
     
-    //btn : push to SSL web vc
-    MHButton *sslWapBtn = [MHButton normalButtonWithTitle:@"SSLWap"
-                                                    frame:CGRectMake(90, 260, 120, 40)
-                                                   action:^(MHButton *btn)
-                           {
-                               MHSSLWebViewController *sslWebVC = [[MHSSLWebViewController alloc]init];
-                               [self.navigationController pushViewController:sslWebVC animated:YES];
-                           }];
-    
     [self.view addSubview:resumeBtn];
     [self.view addSubview:downloadJsonBtn];
-    [self.view addSubview:sslWapBtn];
 }
 
 - (void)didReceiveMemoryWarning {

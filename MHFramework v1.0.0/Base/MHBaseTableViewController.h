@@ -23,8 +23,6 @@
 
 @property (nonatomic, assign, readwrite) ACTIONTYPE actionType;
 
-@property (nonatomic,assign) BOOL checkLogin;
-
 @property (nonatomic,assign) BOOL configureTableFrame;
 
 #pragma mark - subClass must inherited func 

@@ -11,9 +11,9 @@
 //ACTION_XXXXXX eg ACTION_LOGIN
 
 //BaseURL
-#define BASEURL            @""
+#define BASEURL             @""
 
 //ACTION
-#define ACTION_LOGIN       @"v1/user/slogin"       //登陆
-#define ACTION_EXAMPLE_MP3 @"http://data7.5sing.kgimg.com/T1CTxQB4dT1R47IVrK.mp3"
+#define ACTION_LOGIN        @"v1/user/slogin"       //登陆
+#define ACTION_EXAMPLE_MP3  @"http://data7.5sing.kgimg.com/T1CTxQB4dT1R47IVrK.mp3"
 #define ACTION_EXAMPLE_JSON @"http://rmrbshare.people.com.cn/i/statuses/taglist.json"

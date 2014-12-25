@@ -8,23 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		8B1596025648C1B94614AB89 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 94E92288E7E0AD966A26ACB2 /* libPods.a */; };
-		B00688611A3A97BE00038987 /* MHDownloadJsonDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687DC1A3A97BE00038987 /* MHDownloadJsonDataViewController.m */; };
-		B00688661A3A97BE00038987 /* MHResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687E41A3A97BE00038987 /* MHResumeViewController.m */; };
-		B00688691A3A97BE00038987 /* MHRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687E91A3A97BE00038987 /* MHRootViewController.m */; };
 		B006886A1A3A97BE00038987 /* MHBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687EC1A3A97BE00038987 /* MHBaseDAO.m */; };
 		B006886B1A3A97BE00038987 /* MHDataBaseDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687EE1A3A97BE00038987 /* MHDataBaseDAO.m */; };
 		B006886C1A3A97BE00038987 /* MHAFNetworkingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687F51A3A97BE00038987 /* MHAFNetworkingManager.m */; };
 		B006886D1A3A97BE00038987 /* MHDownloadHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687F71A3A97BE00038987 /* MHDownloadHelper.m */; };
 		B006886E1A3A97BE00038987 /* MHFMDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687F91A3A97BE00038987 /* MHFMDBManager.m */; };
 		B006886F1A3A97BE00038987 /* MHSlidingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687FB1A3A97BE00038987 /* MHSlidingManager.m */; };
-		B00688701A3A97BE00038987 /* MHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B00687FE1A3A97BE00038987 /* MHBaseModel.m */; };
-		B00688711A3A97BE00038987 /* MHBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688001A3A97BE00038987 /* MHBaseObject.m */; };
-		B00688731A3A97BE00038987 /* MHJsonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688041A3A97BE00038987 /* MHJsonDataSource.m */; };
-		B00688741A3A97BE00038987 /* MHJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688061A3A97BE00038987 /* MHJsonModel.m */; };
-		B00688751A3A97BE00038987 /* MHUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688081A3A97BE00038987 /* MHUserInfo.m */; };
-		B006887B1A3A97BE00038987 /* MHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688141A3A97BE00038987 /* MHBaseTableViewController.m */; };
-		B006887C1A3A97BE00038987 /* MHBaseViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688161A3A97BE00038987 /* MHBaseViewController+NavigationBar.m */; };
-		B006887D1A3A97BE00038987 /* MHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688181A3A97BE00038987 /* MHBaseViewController.m */; };
 		B006887E1A3A97BE00038987 /* AFHTTPRequestOperation+TaskInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = B006881C1A3A97BE00038987 /* AFHTTPRequestOperation+TaskInfo.m */; };
 		B006887F1A3A97BE00038987 /* NSMutableArray+AddObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B006881E1A3A97BE00038987 /* NSMutableArray+AddObject.m */; };
 		B00688801A3A97BE00038987 /* NSObject+GetPropertys.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688201A3A97BE00038987 /* NSObject+GetPropertys.m */; };
@@ -55,15 +44,25 @@
 		B00688991A3A97BE00038987 /* MJRefreshHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688571A3A97BE00038987 /* MJRefreshHeaderView.m */; };
 		B006889A1A3A97BE00038987 /* XLCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B006885A1A3A97BE00038987 /* XLCycleScrollView.m */; };
 		B006889B1A3A97BE00038987 /* YRSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B006885D1A3A97BE00038987 /* YRSideViewController.m */; };
-		B006889C1A3A97BE00038987 /* MHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688601A3A97BE00038987 /* MHButton.m */; };
 		B00688A61A3AD49400038987 /* NSArray+MHJson.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688A51A3AD49400038987 /* NSArray+MHJson.m */; };
 		B00688A91A3AD4A700038987 /* NSDictionary+MHJson.m in Sources */ = {isa = PBXBuildFile; fileRef = B00688A81A3AD4A700038987 /* NSDictionary+MHJson.m */; };
 		B02C04FD1A1CAB7400305193 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B02C04FC1A1CAB7400305193 /* main.m */; };
 		B02C05001A1CAB7400305193 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B02C04FF1A1CAB7400305193 /* AppDelegate.m */; };
 		B02C05031A1CAB7400305193 /* MHAgileFramework.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B02C05011A1CAB7400305193 /* MHAgileFramework.xcdatamodeld */; };
 		B02C050B1A1CAB7400305193 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B02C050A1A1CAB7400305193 /* Images.xcassets */; };
-		B0364BCE1A3EC4800058CDE8 /* MHElementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */; };
-		B06B19351A47E3E9006FB56D /* MHSSLWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B19341A47E3E9006FB56D /* MHSSLWebViewController.m */; };
+		B06803F61A4BFEB000F0D2F6 /* MHBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B06803ED1A4BFEB000F0D2F6 /* MHBaseModel.m */; };
+		B06803F71A4BFEB000F0D2F6 /* MHBaseObject.m in Sources */ = {isa = PBXBuildFile; fileRef = B06803EF1A4BFEB000F0D2F6 /* MHBaseObject.m */; };
+		B06803F81A4BFEB000F0D2F6 /* MHBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06803F11A4BFEB000F0D2F6 /* MHBaseTableViewController.m */; };
+		B06803F91A4BFEB000F0D2F6 /* MHBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06803F31A4BFEB000F0D2F6 /* MHBaseViewController.m */; };
+		B06803FA1A4BFEB000F0D2F6 /* MHBaseViewController+NavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B06803F51A4BFEB000F0D2F6 /* MHBaseViewController+NavigationBar.m */; };
+		B06803FE1A4BFECF00F0D2F6 /* MHButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B06803FD1A4BFECF00F0D2F6 /* MHButton.m */; };
+		B068040B1A4BFF9800F0D2F6 /* MHDownloadJsonDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06804041A4BFF9800F0D2F6 /* MHDownloadJsonDataViewController.m */; };
+		B068040C1A4BFF9800F0D2F6 /* MHResumeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06804061A4BFF9800F0D2F6 /* MHResumeViewController.m */; };
+		B068040D1A4BFF9800F0D2F6 /* MHRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B06804081A4BFF9800F0D2F6 /* MHRootViewController.m */; };
+		B06804171A4BFFAB00F0D2F6 /* MHElementModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B06804101A4BFFAB00F0D2F6 /* MHElementModel.m */; };
+		B06804191A4BFFAB00F0D2F6 /* MHJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B06804141A4BFFAB00F0D2F6 /* MHJsonModel.m */; };
+		B068041D1A4C00AD00F0D2F6 /* MHJsonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B068041C1A4C00AD00F0D2F6 /* MHJsonDataSource.m */; };
+		B068041F1A4C02AE00F0D2F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B068041E1A4C02AE00F0D2F6 /* Default-568h@2x.png */; };
 		B06B193A1A496224006FB56D /* MHAgile.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B06B19391A496224006FB56D /* MHAgile.bundle */; };
 		B06B193D1A4962B6006FB56D /* UIImage+bundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B193C1A4962B6006FB56D /* UIImage+bundleImage.m */; };
 		B0F792141A24996A00D1FAFB /* Note in Resources */ = {isa = PBXBuildFile; fileRef = B0F792131A24996A00D1FAFB /* Note */; };
@@ -73,12 +72,6 @@
 		165541709DDCBC5C8F84B9A8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		29CA0C15026F2E8B4630F296 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		94E92288E7E0AD966A26ACB2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		B00687DB1A3A97BE00038987 /* MHDownloadJsonDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDownloadJsonDataViewController.h; sourceTree = "<group>"; };
-		B00687DC1A3A97BE00038987 /* MHDownloadJsonDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHDownloadJsonDataViewController.m; sourceTree = "<group>"; };
-		B00687E31A3A97BE00038987 /* MHResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHResumeViewController.h; sourceTree = "<group>"; };
-		B00687E41A3A97BE00038987 /* MHResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHResumeViewController.m; sourceTree = "<group>"; };
-		B00687E81A3A97BE00038987 /* MHRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHRootViewController.h; sourceTree = "<group>"; };
-		B00687E91A3A97BE00038987 /* MHRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHRootViewController.m; sourceTree = "<group>"; };
 		B00687EB1A3A97BE00038987 /* MHBaseDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBaseDAO.h; sourceTree = "<group>"; };
 		B00687EC1A3A97BE00038987 /* MHBaseDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBaseDAO.m; sourceTree = "<group>"; };
 		B00687ED1A3A97BE00038987 /* MHDataBaseDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHDataBaseDAO.h; sourceTree = "<group>"; };
@@ -94,22 +87,6 @@
 		B00687F91A3A97BE00038987 /* MHFMDBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHFMDBManager.m; sourceTree = "<group>"; };
 		B00687FA1A3A97BE00038987 /* MHSlidingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHSlidingManager.h; sourceTree = "<group>"; };
 		B00687FB1A3A97BE00038987 /* MHSlidingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHSlidingManager.m; sourceTree = "<group>"; };
-		B00687FD1A3A97BE00038987 /* MHBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBaseModel.h; sourceTree = "<group>"; };
-		B00687FE1A3A97BE00038987 /* MHBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBaseModel.m; sourceTree = "<group>"; };
-		B00687FF1A3A97BE00038987 /* MHBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBaseObject.h; sourceTree = "<group>"; };
-		B00688001A3A97BE00038987 /* MHBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBaseObject.m; sourceTree = "<group>"; };
-		B00688031A3A97BE00038987 /* MHJsonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHJsonDataSource.h; path = ../../Model/MHJsonDataSource.h; sourceTree = "<group>"; };
-		B00688041A3A97BE00038987 /* MHJsonDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHJsonDataSource.m; path = ../../Model/MHJsonDataSource.m; sourceTree = "<group>"; };
-		B00688051A3A97BE00038987 /* MHJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHJsonModel.h; sourceTree = "<group>"; };
-		B00688061A3A97BE00038987 /* MHJsonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHJsonModel.m; sourceTree = "<group>"; };
-		B00688071A3A97BE00038987 /* MHUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHUserInfo.h; sourceTree = "<group>"; };
-		B00688081A3A97BE00038987 /* MHUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHUserInfo.m; sourceTree = "<group>"; };
-		B00688131A3A97BE00038987 /* MHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBaseTableViewController.h; sourceTree = "<group>"; };
-		B00688141A3A97BE00038987 /* MHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBaseTableViewController.m; sourceTree = "<group>"; };
-		B00688151A3A97BE00038987 /* MHBaseViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MHBaseViewController+NavigationBar.h"; sourceTree = "<group>"; };
-		B00688161A3A97BE00038987 /* MHBaseViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MHBaseViewController+NavigationBar.m"; sourceTree = "<group>"; };
-		B00688171A3A97BE00038987 /* MHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHBaseViewController.h; sourceTree = "<group>"; };
-		B00688181A3A97BE00038987 /* MHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHBaseViewController.m; sourceTree = "<group>"; };
 		B006881B1A3A97BE00038987 /* AFHTTPRequestOperation+TaskInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFHTTPRequestOperation+TaskInfo.h"; sourceTree = "<group>"; };
 		B006881C1A3A97BE00038987 /* AFHTTPRequestOperation+TaskInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AFHTTPRequestOperation+TaskInfo.m"; sourceTree = "<group>"; };
 		B006881D1A3A97BE00038987 /* NSMutableArray+AddObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+AddObject.h"; sourceTree = "<group>"; };
@@ -170,8 +147,6 @@
 		B006885A1A3A97BE00038987 /* XLCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLCycleScrollView.m; sourceTree = "<group>"; };
 		B006885C1A3A97BE00038987 /* YRSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRSideViewController.h; sourceTree = "<group>"; };
 		B006885D1A3A97BE00038987 /* YRSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YRSideViewController.m; sourceTree = "<group>"; };
-		B006885F1A3A97BE00038987 /* MHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHButton.h; sourceTree = "<group>"; };
-		B00688601A3A97BE00038987 /* MHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHButton.m; sourceTree = "<group>"; };
 		B006889E1A3A992400038987 /* TestProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestProtocol.h; sourceTree = "<group>"; };
 		B00688A41A3AD49400038987 /* NSArray+MHJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+MHJson.h"; sourceTree = "<group>"; };
 		B00688A51A3AD49400038987 /* NSArray+MHJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+MHJson.m"; sourceTree = "<group>"; };
@@ -187,10 +162,31 @@
 		B02C05181A1CAB7400305193 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B02C05191A1CAB7400305193 /* MHAgileFrameworkTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHAgileFrameworkTests.m; sourceTree = "<group>"; };
 		B02C05B71A1DC59900305193 /* MHPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHPrefixHeader.pch; sourceTree = "<group>"; };
-		B0364BCC1A3EC4800058CDE8 /* MHElementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHElementModel.h; sourceTree = "<group>"; };
-		B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHElementModel.m; sourceTree = "<group>"; };
-		B06B19331A47E3E9006FB56D /* MHSSLWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHSSLWebViewController.h; sourceTree = "<group>"; };
-		B06B19341A47E3E9006FB56D /* MHSSLWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHSSLWebViewController.m; sourceTree = "<group>"; };
+		B06803EC1A4BFEB000F0D2F6 /* MHBaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHBaseModel.h; path = "MHFramework v1.0.0/Base/MHBaseModel.h"; sourceTree = SOURCE_ROOT; };
+		B06803ED1A4BFEB000F0D2F6 /* MHBaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHBaseModel.m; path = "MHFramework v1.0.0/Base/MHBaseModel.m"; sourceTree = SOURCE_ROOT; };
+		B06803EE1A4BFEB000F0D2F6 /* MHBaseObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHBaseObject.h; path = "MHFramework v1.0.0/Base/MHBaseObject.h"; sourceTree = SOURCE_ROOT; };
+		B06803EF1A4BFEB000F0D2F6 /* MHBaseObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHBaseObject.m; path = "MHFramework v1.0.0/Base/MHBaseObject.m"; sourceTree = SOURCE_ROOT; };
+		B06803F01A4BFEB000F0D2F6 /* MHBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHBaseTableViewController.h; path = "MHFramework v1.0.0/Base/MHBaseTableViewController.h"; sourceTree = SOURCE_ROOT; };
+		B06803F11A4BFEB000F0D2F6 /* MHBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHBaseTableViewController.m; path = "MHFramework v1.0.0/Base/MHBaseTableViewController.m"; sourceTree = SOURCE_ROOT; };
+		B06803F21A4BFEB000F0D2F6 /* MHBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHBaseViewController.h; path = "MHFramework v1.0.0/Base/MHBaseViewController.h"; sourceTree = SOURCE_ROOT; };
+		B06803F31A4BFEB000F0D2F6 /* MHBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHBaseViewController.m; path = "MHFramework v1.0.0/Base/MHBaseViewController.m"; sourceTree = SOURCE_ROOT; };
+		B06803F41A4BFEB000F0D2F6 /* MHBaseViewController+NavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MHBaseViewController+NavigationBar.h"; path = "MHFramework v1.0.0/Base/MHBaseViewController+NavigationBar.h"; sourceTree = SOURCE_ROOT; };
+		B06803F51A4BFEB000F0D2F6 /* MHBaseViewController+NavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "MHBaseViewController+NavigationBar.m"; path = "MHFramework v1.0.0/Base/MHBaseViewController+NavigationBar.m"; sourceTree = SOURCE_ROOT; };
+		B06803FC1A4BFECF00F0D2F6 /* MHButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHButton.h; path = UIKitExtend/MHButton.h; sourceTree = "<group>"; };
+		B06803FD1A4BFECF00F0D2F6 /* MHButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHButton.m; path = UIKitExtend/MHButton.m; sourceTree = "<group>"; };
+		B06804031A4BFF9800F0D2F6 /* MHDownloadJsonDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHDownloadJsonDataViewController.h; path = Controller/MHDownloadJsonDataViewController.h; sourceTree = "<group>"; };
+		B06804041A4BFF9800F0D2F6 /* MHDownloadJsonDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHDownloadJsonDataViewController.m; path = Controller/MHDownloadJsonDataViewController.m; sourceTree = "<group>"; };
+		B06804051A4BFF9800F0D2F6 /* MHResumeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHResumeViewController.h; path = Controller/MHResumeViewController.h; sourceTree = "<group>"; };
+		B06804061A4BFF9800F0D2F6 /* MHResumeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHResumeViewController.m; path = Controller/MHResumeViewController.m; sourceTree = "<group>"; };
+		B06804071A4BFF9800F0D2F6 /* MHRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHRootViewController.h; path = Controller/MHRootViewController.h; sourceTree = "<group>"; };
+		B06804081A4BFF9800F0D2F6 /* MHRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHRootViewController.m; path = Controller/MHRootViewController.m; sourceTree = "<group>"; };
+		B068040F1A4BFFAB00F0D2F6 /* MHElementModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHElementModel.h; path = Model/MHElementModel.h; sourceTree = "<group>"; };
+		B06804101A4BFFAB00F0D2F6 /* MHElementModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHElementModel.m; path = Model/MHElementModel.m; sourceTree = "<group>"; };
+		B06804131A4BFFAB00F0D2F6 /* MHJsonModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MHJsonModel.h; path = Model/MHJsonModel.h; sourceTree = "<group>"; };
+		B06804141A4BFFAB00F0D2F6 /* MHJsonModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MHJsonModel.m; path = Model/MHJsonModel.m; sourceTree = "<group>"; };
+		B068041B1A4C00AD00F0D2F6 /* MHJsonDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MHJsonDataSource.h; sourceTree = "<group>"; };
+		B068041C1A4C00AD00F0D2F6 /* MHJsonDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MHJsonDataSource.m; sourceTree = "<group>"; };
+		B068041E1A4C02AE00F0D2F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "MHAgile.bundle/Default-568h@2x.png"; sourceTree = "<group>"; };
 		B06B19391A496224006FB56D /* MHAgile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MHAgile.bundle; sourceTree = "<group>"; };
 		B06B193B1A4962B6006FB56D /* UIImage+bundleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+bundleImage.h"; sourceTree = "<group>"; };
 		B06B193C1A4962B6006FB56D /* UIImage+bundleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+bundleImage.m"; sourceTree = "<group>"; };
@@ -216,30 +212,12 @@
 				B00687EA1A3A97BE00038987 /* DAO */,
 				B00687F31A3A97BE00038987 /* Manager */,
 				B00688121A3A97BE00038987 /* Base */,
-				B00687FC1A3A97BE00038987 /* Model */,
-				B00687DA1A3A97BE00038987 /* Controller */,
-				B006885E1A3A97BE00038987 /* View */,
 				B00688191A3A97BE00038987 /* Util */,
 				B006883A1A3A97BE00038987 /* Vendor */,
 				B00688091A3A97BE00038987 /* Resource */,
 			);
 			name = "MHFramework v1.0.0";
 			path = "../MHFramework v1.0.0";
-			sourceTree = "<group>";
-		};
-		B00687DA1A3A97BE00038987 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B00687E81A3A97BE00038987 /* MHRootViewController.h */,
-				B00687E91A3A97BE00038987 /* MHRootViewController.m */,
-				B00687E31A3A97BE00038987 /* MHResumeViewController.h */,
-				B00687E41A3A97BE00038987 /* MHResumeViewController.m */,
-				B00687DB1A3A97BE00038987 /* MHDownloadJsonDataViewController.h */,
-				B00687DC1A3A97BE00038987 /* MHDownloadJsonDataViewController.m */,
-				B06B19331A47E3E9006FB56D /* MHSSLWebViewController.h */,
-				B06B19341A47E3E9006FB56D /* MHSSLWebViewController.m */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		B00687EA1A3A97BE00038987 /* DAO */ = {
@@ -277,44 +255,26 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
-		B00687FC1A3A97BE00038987 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B0364BD01A3ED95F0058CDE8 /* Base */,
-				B00688051A3A97BE00038987 /* MHJsonModel.h */,
-				B00688061A3A97BE00038987 /* MHJsonModel.m */,
-				B0364BCC1A3EC4800058CDE8 /* MHElementModel.h */,
-				B0364BCD1A3EC4800058CDE8 /* MHElementModel.m */,
-				B00688071A3A97BE00038987 /* MHUserInfo.h */,
-				B00688081A3A97BE00038987 /* MHUserInfo.m */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		B00688091A3A97BE00038987 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				B006880E1A3A97BE00038987 /* ImageSource */,
 			);
 			path = Resource;
-			sourceTree = "<group>";
-		};
-		B006880E1A3A97BE00038987 /* ImageSource */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ImageSource;
 			sourceTree = "<group>";
 		};
 		B00688121A3A97BE00038987 /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				B00688131A3A97BE00038987 /* MHBaseTableViewController.h */,
-				B00688141A3A97BE00038987 /* MHBaseTableViewController.m */,
-				B00688151A3A97BE00038987 /* MHBaseViewController+NavigationBar.h */,
-				B00688161A3A97BE00038987 /* MHBaseViewController+NavigationBar.m */,
-				B00688171A3A97BE00038987 /* MHBaseViewController.h */,
-				B00688181A3A97BE00038987 /* MHBaseViewController.m */,
+				B06803EE1A4BFEB000F0D2F6 /* MHBaseObject.h */,
+				B06803EF1A4BFEB000F0D2F6 /* MHBaseObject.m */,
+				B06803EC1A4BFEB000F0D2F6 /* MHBaseModel.h */,
+				B06803ED1A4BFEB000F0D2F6 /* MHBaseModel.m */,
+				B06803F01A4BFEB000F0D2F6 /* MHBaseTableViewController.h */,
+				B06803F11A4BFEB000F0D2F6 /* MHBaseTableViewController.m */,
+				B06803F21A4BFEB000F0D2F6 /* MHBaseViewController.h */,
+				B06803F31A4BFEB000F0D2F6 /* MHBaseViewController.m */,
+				B06803F41A4BFEB000F0D2F6 /* MHBaseViewController+NavigationBar.h */,
+				B06803F51A4BFEB000F0D2F6 /* MHBaseViewController+NavigationBar.m */,
 			);
 			name = Base;
 			path = UIBaseVC;
@@ -332,6 +292,7 @@
 		B006881A1A3A97BE00038987 /* Extend */ = {
 			isa = PBXGroup;
 			children = (
+				B06803FB1A4BFEBD00F0D2F6 /* UIKitExtend */,
 				B006881B1A3A97BE00038987 /* AFHTTPRequestOperation+TaskInfo.h */,
 				B006881C1A3A97BE00038987 /* AFHTTPRequestOperation+TaskInfo.m */,
 				B006881D1A3A97BE00038987 /* NSMutableArray+AddObject.h */,
@@ -417,8 +378,8 @@
 				B00688A51A3AD49400038987 /* NSArray+MHJson.m */,
 				B00688A71A3AD4A700038987 /* NSDictionary+MHJson.h */,
 				B00688A81A3AD4A700038987 /* NSDictionary+MHJson.m */,
-				B00688031A3A97BE00038987 /* MHJsonDataSource.h */,
-				B00688041A3A97BE00038987 /* MHJsonDataSource.m */,
+				B068041B1A4C00AD00F0D2F6 /* MHJsonDataSource.h */,
+				B068041C1A4C00AD00F0D2F6 /* MHJsonDataSource.m */,
 			);
 			path = JsonToNSObject;
 			sourceTree = "<group>";
@@ -458,15 +419,6 @@
 			path = YRSideViewController;
 			sourceTree = "<group>";
 		};
-		B006885E1A3A97BE00038987 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B006885F1A3A97BE00038987 /* MHButton.h */,
-				B00688601A3A97BE00038987 /* MHButton.m */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		B02C04EE1A1CAB7400305193 = {
 			isa = PBXGroup;
 			children = (
@@ -491,6 +443,9 @@
 			isa = PBXGroup;
 			children = (
 				B00687D91A3A97BE00038987 /* MHFramework v1.0.0 */,
+				B06804021A4BFF4C00F0D2F6 /* Controller */,
+				B06804011A4BFF4700F0D2F6 /* View */,
+				B06804001A4BFF4100F0D2F6 /* Model */,
 				B02C04FE1A1CAB7400305193 /* AppDelegate.h */,
 				B02C04FF1A1CAB7400305193 /* AppDelegate.m */,
 				B02C04FA1A1CAB7400305193 /* Supporting Files */,
@@ -501,6 +456,7 @@
 		B02C04FA1A1CAB7400305193 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B068041E1A4C02AE00F0D2F6 /* Default-568h@2x.png */,
 				B06B19391A496224006FB56D /* MHAgile.bundle */,
 				B006889E1A3A992400038987 /* TestProtocol.h */,
 				B02C05B71A1DC59900305193 /* MHPrefixHeader.pch */,
@@ -529,15 +485,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B0364BD01A3ED95F0058CDE8 /* Base */ = {
+		B06803FB1A4BFEBD00F0D2F6 /* UIKitExtend */ = {
 			isa = PBXGroup;
 			children = (
-				B00687FF1A3A97BE00038987 /* MHBaseObject.h */,
-				B00688001A3A97BE00038987 /* MHBaseObject.m */,
-				B00687FD1A3A97BE00038987 /* MHBaseModel.h */,
-				B00687FE1A3A97BE00038987 /* MHBaseModel.m */,
+				B06803FC1A4BFECF00F0D2F6 /* MHButton.h */,
+				B06803FD1A4BFECF00F0D2F6 /* MHButton.m */,
 			);
-			name = Base;
+			name = UIKitExtend;
+			sourceTree = "<group>";
+		};
+		B06804001A4BFF4100F0D2F6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B068040F1A4BFFAB00F0D2F6 /* MHElementModel.h */,
+				B06804101A4BFFAB00F0D2F6 /* MHElementModel.m */,
+				B06804131A4BFFAB00F0D2F6 /* MHJsonModel.h */,
+				B06804141A4BFFAB00F0D2F6 /* MHJsonModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		B06804011A4BFF4700F0D2F6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B06804021A4BFF4C00F0D2F6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B06804031A4BFF9800F0D2F6 /* MHDownloadJsonDataViewController.h */,
+				B06804041A4BFF9800F0D2F6 /* MHDownloadJsonDataViewController.m */,
+				B06804051A4BFF9800F0D2F6 /* MHResumeViewController.h */,
+				B06804061A4BFF9800F0D2F6 /* MHResumeViewController.m */,
+				B06804071A4BFF9800F0D2F6 /* MHRootViewController.h */,
+				B06804081A4BFF9800F0D2F6 /* MHRootViewController.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		B06B19361A47F7FF006FB56D /* Helper */ = {
@@ -628,6 +613,7 @@
 				B06B193A1A496224006FB56D /* MHAgile.bundle in Resources */,
 				B0F792141A24996A00D1FAFB /* Note in Resources */,
 				B00688951A3A97BE00038987 /* MJRefresh.bundle in Resources */,
+				B068041F1A4C02AE00F0D2F6 /* Default-568h@2x.png in Resources */,
 				B02C050B1A1CAB7400305193 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -672,60 +658,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B00688661A3A97BE00038987 /* MHResumeViewController.m in Sources */,
 				B00688A91A3AD4A700038987 /* NSDictionary+MHJson.m in Sources */,
+				B068040D1A4BFF9800F0D2F6 /* MHRootViewController.m in Sources */,
 				B00688801A3A97BE00038987 /* NSObject+GetPropertys.m in Sources */,
 				B006888C1A3A97BE00038987 /* TimeTool.m in Sources */,
 				B02C05031A1CAB7400305193 /* MHAgileFramework.xcdatamodeld in Sources */,
 				B00688921A3A97BE00038987 /* BaseNSObject.m in Sources */,
 				B00688811A3A97BE00038987 /* NSObject+MHObjectExtend.m in Sources */,
+				B068041D1A4C00AD00F0D2F6 /* MHJsonDataSource.m in Sources */,
 				B006886C1A3A97BE00038987 /* MHAFNetworkingManager.m in Sources */,
-				B00688731A3A97BE00038987 /* MHJsonDataSource.m in Sources */,
+				B06803F71A4BFEB000F0D2F6 /* MHBaseObject.m in Sources */,
 				B006886E1A3A97BE00038987 /* MHFMDBManager.m in Sources */,
 				B006888B1A3A97BE00038987 /* ParseTool.m in Sources */,
 				B006888F1A3A97BE00038987 /* NSObject+ETAdditions.m in Sources */,
 				B02C05001A1CAB7400305193 /* AppDelegate.m in Sources */,
+				B06804171A4BFFAB00F0D2F6 /* MHElementModel.m in Sources */,
 				B006886A1A3A97BE00038987 /* MHBaseDAO.m in Sources */,
-				B00688711A3A97BE00038987 /* MHBaseObject.m in Sources */,
-				B06B19351A47E3E9006FB56D /* MHSSLWebViewController.m in Sources */,
 				B006887F1A3A97BE00038987 /* NSMutableArray+AddObject.m in Sources */,
 				B006888A1A3A97BE00038987 /* MHMD5.m in Sources */,
+				B068040C1A4BFF9800F0D2F6 /* MHResumeViewController.m in Sources */,
 				B006889A1A3A97BE00038987 /* XLCycleScrollView.m in Sources */,
 				B006886B1A3A97BE00038987 /* MHDataBaseDAO.m in Sources */,
 				B00688901A3A97BE00038987 /* NSStringAdditions.m in Sources */,
 				B006886F1A3A97BE00038987 /* MHSlidingManager.m in Sources */,
 				B006886D1A3A97BE00038987 /* MHDownloadHelper.m in Sources */,
-				B006887B1A3A97BE00038987 /* MHBaseTableViewController.m in Sources */,
-				B0364BCE1A3EC4800058CDE8 /* MHElementModel.m in Sources */,
-				B006887D1A3A97BE00038987 /* MHBaseViewController.m in Sources */,
 				B00688861A3A97BE00038987 /* UIImageView+LBBlurredImage.m in Sources */,
 				B00688971A3A97BE00038987 /* MJRefreshConst.m in Sources */,
-				B00688691A3A97BE00038987 /* MHRootViewController.m in Sources */,
+				B06803FA1A4BFEB000F0D2F6 /* MHBaseViewController+NavigationBar.m in Sources */,
 				B00688881A3A97BE00038987 /* UIView+NIBView.m in Sources */,
-				B006887C1A3A97BE00038987 /* MHBaseViewController+NavigationBar.m in Sources */,
+				B068040B1A4BFF9800F0D2F6 /* MHDownloadJsonDataViewController.m in Sources */,
 				B006887E1A3A97BE00038987 /* AFHTTPRequestOperation+TaskInfo.m in Sources */,
-				B006889C1A3A97BE00038987 /* MHButton.m in Sources */,
-				B00688741A3A97BE00038987 /* MHJsonModel.m in Sources */,
+				B06803F81A4BFEB000F0D2F6 /* MHBaseTableViewController.m in Sources */,
 				B00688831A3A97BE00038987 /* QHCommonUtil.m in Sources */,
 				B00688961A3A97BE00038987 /* MJRefreshBaseView.m in Sources */,
 				B006888D1A3A97BE00038987 /* GVUserDefaults.m in Sources */,
 				B00688841A3A97BE00038987 /* SandboxFile.m in Sources */,
 				B00688941A3A97BE00038987 /* NSString+IJson.m in Sources */,
-				B00688751A3A97BE00038987 /* MHUserInfo.m in Sources */,
+				B06803FE1A4BFECF00F0D2F6 /* MHButton.m in Sources */,
 				B006889B1A3A97BE00038987 /* YRSideViewController.m in Sources */,
 				B00688911A3A97BE00038987 /* UIView+DevilUIView.m in Sources */,
+				B06804191A4BFFAB00F0D2F6 /* MHJsonModel.m in Sources */,
 				B00688851A3A97BE00038987 /* UIImage+ImageEffects.m in Sources */,
 				B00688A61A3AD49400038987 /* NSArray+MHJson.m in Sources */,
 				B00688821A3A97BE00038987 /* NSString+JudgeIfEmpty.m in Sources */,
 				B00688871A3A97BE00038987 /* UIView+FindFirstResponder.m in Sources */,
 				B00688981A3A97BE00038987 /* MJRefreshFooterView.m in Sources */,
 				B06B193D1A4962B6006FB56D /* UIImage+bundleImage.m in Sources */,
-				B00688611A3A97BE00038987 /* MHDownloadJsonDataViewController.m in Sources */,
+				B06803F91A4BFEB000F0D2F6 /* MHBaseViewController.m in Sources */,
 				B006888E1A3A97BE00038987 /* NSDictionary+Devil.m in Sources */,
-				B00688701A3A97BE00038987 /* MHBaseModel.m in Sources */,
 				B00688931A3A97BE00038987 /* NSData+IJson.m in Sources */,
 				B02C04FD1A1CAB7400305193 /* main.m in Sources */,
 				B00688991A3A97BE00038987 /* MJRefreshHeaderView.m in Sources */,
+				B06803F61A4BFEB000F0D2F6 /* MHBaseModel.m in Sources */,
 				B00688891A3A97BE00038987 /* UIViewController+MHViewExtend.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

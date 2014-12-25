@@ -68,15 +68,7 @@
 
 - (void)loadDataWithURL:(NSString *)url param:(NSDictionary *)parameters response:(responseHandler)handler
 {
-    Class cls;
-    if ([[MHUserInfo sharedInstance]state] == LOADSTATE_UNLOAD) {
-        [self showAlertWithTitle:@"提示" andMessage:@"用户未登录!"];
-        //TODO
-        //push to load interface
-        return;
-    }
-    
-    [self loadDataWithURL:url param:parameters response:handler class:cls];
+    [self loadDataWithURL:url param:parameters response:handler class:nil];
 }
 
 - (void)loadDataWithURL:(NSString *)url param:(NSDictionary *)parameters response:(responseHandler)handler class:(Class)cls{

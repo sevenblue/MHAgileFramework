@@ -45,7 +45,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.checkLogin = NO;
 }
 
 - (void)initData{
@@ -109,17 +108,6 @@
 {
     MJRefreshHeaderView *header = [MJRefreshHeaderView header];
     header.scrollView = self.tableView;
-    if (self.checkLogin)
-    {
-        //如果没有登录就停止监听pull
-        if (![[MHUserInfo sharedInstance] isUserExist])
-        {
-            [header free];
-            //
-            //            [SharedAppDelegate.tabBarController presentViewController:[MHLoginViewController new] animated:YES completion:nil];
-            return;
-        }
-    }
     header.beginRefreshingBlock = ^(MJRefreshBaseView *refreshView) {
         // TODO刷新数据
         _indexPage -= _indexPage;
