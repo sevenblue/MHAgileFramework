@@ -68,7 +68,7 @@ AS_SINGLETON(MHAFNetworkingManager)
                     failure:(NetworkErrorHandler)failure;
 
 /**
- *  Used for reload data which the app hasn't finished download at last time.
+ *  Used for resume dowmload
  *
  *  @param taskId   to identify the diffierence of every download operation
  *  @param size     file had been downloaded size
