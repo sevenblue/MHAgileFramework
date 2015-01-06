@@ -1,6 +1,6 @@
 MHAgileFramework
 ================
-
+MHAgileFramework 是什么
 ================
 MHAgileFramework 设计初衷是做一个快速、敏捷的开发框架，使用者使用后只需要关心UI层和简要写一下UI控制层，就可以快速开发出一款APP。那么，它拥有强大且完善的数据层，并且集成了多个三方框架or便利工具，steven也经常喜欢把他自己常用的便利工具加入到里面。
 
@@ -8,6 +8,8 @@ gitHub:https://github.com/sevenblue/MHAgileFramework.git
 
 @Attention: MHAgileFramework使用CocoaPods管理三方类库，如果您不想用CocoaPods，请手动将AFNetworking、FMDB、JSONKit、RMMapper、SVProgressHUD引入到项目中，并且放于Vendor文件夹中
 
+================
+MHAgileFramework 的文件结构
 ================
 想更好的应用这个framework，首先我们来了解一下他的文件结构。
 
