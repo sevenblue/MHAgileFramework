@@ -42,10 +42,9 @@
                     NSArray * modelList = [MHJsonDataSource jsonDataToNSObjectsWithResponseObject:responseObject andClass:[MHJsonModel class]];
                     NSLog(@"%@",modelList);
                     
-                    /*  #TODO save to DB
-                    NSArray *arr = @[@"aaa",@"bbbb",@"cccc"];
-                    [[MHFMDBManager sharedInstance]insertToDBWithModelList:arr inDB:@"globle_tables"];
-                     */
+                    /*  #TODO save to DB */
+                    [[MHFMDBManager sharedInstance]insertToDBWithModelList:modelList inDB:@"globle_tables"];
+                    
                 }
                 
             }

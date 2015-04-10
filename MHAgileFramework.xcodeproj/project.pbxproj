@@ -65,6 +65,7 @@
 		B06804231A4C06B100F0D2F6 /* MHJsonDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B06804221A4C06B100F0D2F6 /* MHJsonDataSource.m */; };
 		B06B193A1A496224006FB56D /* MHAgile.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B06B19391A496224006FB56D /* MHAgile.bundle */; };
 		B06B193D1A4962B6006FB56D /* UIImage+bundleImage.m in Sources */ = {isa = PBXBuildFile; fileRef = B06B193C1A4962B6006FB56D /* UIImage+bundleImage.m */; };
+		B06EAC641A78CC13002525B1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B06EAC631A78CC13002525B1 /* UIKit.framework */; };
 		B0F792141A24996A00D1FAFB /* Note in Resources */ = {isa = PBXBuildFile; fileRef = B0F792131A24996A00D1FAFB /* Note */; };
 /* End PBXBuildFile section */
 
@@ -190,6 +191,7 @@
 		B06B19391A496224006FB56D /* MHAgile.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MHAgile.bundle; sourceTree = "<group>"; };
 		B06B193B1A4962B6006FB56D /* UIImage+bundleImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+bundleImage.h"; sourceTree = "<group>"; };
 		B06B193C1A4962B6006FB56D /* UIImage+bundleImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+bundleImage.m"; sourceTree = "<group>"; };
+		B06EAC631A78CC13002525B1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B0F792131A24996A00D1FAFB /* Note */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Note; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -198,6 +200,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06EAC641A78CC13002525B1 /* UIKit.framework in Frameworks */,
 				8B1596025648C1B94614AB89 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,6 +549,7 @@
 		C0DF8EA4A793838B246EA3ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B06EAC631A78CC13002525B1 /* UIKit.framework */,
 				94E92288E7E0AD966A26ACB2 /* libPods.a */,
 			);
 			name = Frameworks;

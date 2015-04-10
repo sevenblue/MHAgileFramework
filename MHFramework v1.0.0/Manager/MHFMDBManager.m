@@ -36,6 +36,7 @@ DEF_SINGLETON(MHFMDBManager);
 
 -(void)CreateDataBase
 {
+    NSLog(@"DBPath:%@",GetDataBasePath(@"globle_tables"));
     _queue = [[FMDatabaseQueue alloc]initWithPath:GetDataBasePath(@"globle_tables")];
 }
 
