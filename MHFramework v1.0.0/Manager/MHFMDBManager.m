@@ -42,23 +42,28 @@ DEF_SINGLETON(MHFMDBManager);
 
 -(void)CreateTable
 {
-    id retult = [[MHDataBaseDAO alloc]initWithDBQueue:_queue];
-    NSLog(@"%@",retult);
+    id result = [[MHDataBaseDAO alloc]initWithDBQueue:_queue];
+    NSLog(@"result%@",result);
 }
 
 #pragma mark - factory
--(id)Factory:(NSString *)tableName
+- (id)Factory:(NSString *)tableName modelClass:(Class)modelClass
 {
     _queue = nil;
     _queue=[[FMDatabaseQueue alloc]initWithPath:GetDataBasePath(tableName)];
     NSLog(@"DBPath:%@",GetDataBasePath(tableName));
-    return [[MHDataBaseDAO alloc]initWithDBQueue:_queue];
+    return [[MHDataBaseDAO alloc]initWithDBQueue:_queue inTable:tableName modelClass:modelClass];
+}
+
+-(id)Factory:(NSString *)tableName
+{
+    return [self Factory:tableName modelClass:nil];
 }
 
 #pragma mark - 增
--(void)insertToDBWithModelList:(id)ModelList inDB:(NSString *)tableName
+-(void)insertToDBWithModelList:(id)ModelList inDB:(NSString *)tableName modelClass:(Class)modelClass;
 {
-    self.classValues = [self Factory:tableName];
+    self.classValues = [self Factory:tableName modelClass:modelClass];
     [classValues insertModelListToDB:ModelList callback:^(BOOL Values) {
         NSLog(@"批量添加%d",Values);
     }];

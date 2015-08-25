@@ -26,26 +26,24 @@
 @synthesize columeTypes;
 @synthesize bindingQueue;
 
-+(const NSString *)getTableName
-{
-    return @"";
-}
-+(Class)getBindingModelClass
-{
-    return [MHBaseModel class];
-}
 -(id)initWithDBQueue:(FMDatabaseQueue *)queue
+{
+    return [self initWithDBQueue:queue inTable:nil modelClass:nil];
+}
+
+-(id)initWithDBQueue:(FMDatabaseQueue *)queue inTable:(NSString *)tableName modelClass:(Class)modelClass
 {
     self = [super init];
     if (self)
     {
         self.bindingQueue = queue;
-        
+        self.modelClass = modelClass;
+        self.tableName = tableName;
         self.columeNames = [NSMutableArray arrayWithCapacity:16];
         self.columeTypes = [NSMutableArray arrayWithCapacity:16];
         
         //获取绑定的 Model 并 保存 Model 的属性信息
-        NSDictionary* dic  = [[self.class getBindingModelClass] getPropertys];
+        NSDictionary* dic  = [self.modelClass getPropertys];
         NSArray* pronames = [dic objectForKey:@"name"];
         NSArray* protypes = [dic objectForKey:@"type"];
         self.propertys = [NSMutableDictionary dictionaryWithObjects:protypes forKeys:pronames];
@@ -69,6 +67,7 @@
     return self;
     
 }
+
 -(void)dealloc
 {
     self.bindingQueue = nil;
@@ -82,30 +81,34 @@ static NSMutableDictionary* onceCreateTable;
 {
     [onceCreateTable removeAllObjects];
 }
+
 -(void)createTable
 {
-    if([[self.class getTableName] isEmptyWithTrim])
+    if([self.tableName isEmptyWithTrim])
     {
         NSLog(@"LKTableName is None!");
         return;
     }
     [bindingQueue inDatabase:^(FMDatabase* db)
      {
-         NSString* createTable = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@)",[self.class getTableName],[self getParameterString]];
+         NSString* createTable = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@)",self.tableName,[self getParameterString]];
          [db executeUpdate:createTable];
          
      }];
 }
+
 -(void)addColume:(NSString *)name type:(NSString *)type
 {
     [columeNames addObject:name];
     [columeTypes addObject:[MHDataBaseDAO toDBType:type]];
 }
+
 -(void)addColumePrimary:(NSString *)name type:(NSString *)type
 {
     [columeNames addObject:name];
     [columeTypes addObject:[NSString stringWithFormat:@"%@ primary key",[MHDataBaseDAO toDBType:type]]];
 }
+
 -(NSString *)getParameterString
 {
     NSMutableString* pars = [NSMutableString string];
@@ -122,17 +125,20 @@ static NSMutableDictionary* onceCreateTable;
 -(void)searchAll:(void(^)(NSArray*))callback{
     [self searchWhere:nil orderBy:nil offset:0 count:15 callback:callback];
 }
+
 -(void)searchWhere:(NSString*)where callback:(void(^)(NSArray*))block{
     [self searchWhere:where orderBy:nil offset:0 count:15 callback:block];
 }
+
 -(void)searchWhereDic:(NSDictionary*)where callback:(void(^)(NSArray*))block{
     [self searchWhereDic:where orderBy:nil offset:0 count:15 callback:block];
 }
+
 -(void)searchWhere:(NSString *)where orderBy:(NSString *)orderBy offset:(int)offset count:(int)count callback:(void (^)(NSArray *))block
 {
     [bindingQueue inDatabase:^(FMDatabase* db)
      {
-         NSMutableString* query = [NSMutableString stringWithFormat:@"select rowid,* from %@ ",[self.class getTableName]];
+         NSMutableString* query = [NSMutableString stringWithFormat:@"select rowid,* from %@ ",self.tableName];
          if(where != nil && ![where isEmptyWithTrim])
          {
              [query appendFormat:@" where %@",where];
@@ -142,11 +148,12 @@ static NSMutableDictionary* onceCreateTable;
          [self executeResult:set block:block];
      }];
 }
+
 -(void)searchWhereDic:(NSDictionary*)where orderBy:(NSString *)orderby offset:(int)offset count:(int)count callback:(void (^)(NSArray *))block
 {
     [bindingQueue inDatabase:^(FMDatabase* db)
      {
-         NSMutableString* query = [NSMutableString stringWithFormat:@"select rowid,* from %@ ",[self.class getTableName]];
+         NSMutableString* query = [NSMutableString stringWithFormat:@"select rowid,* from %@ ",self.tableName];
          
          NSMutableArray* values = [NSMutableArray arrayWithCapacity:0];
          if(where !=nil&& where.count>0)
@@ -159,6 +166,7 @@ static NSMutableDictionary* onceCreateTable;
          [self executeResult:set block:block];
      }];
 }
+
 -(void)sqlString:(NSMutableString*)sql AddOder:(NSString*)orderby offset:(int)offset count:(int)count
 {
     if(orderby != nil && ![orderby isEmptyWithTrim])
@@ -167,11 +175,12 @@ static NSMutableDictionary* onceCreateTable;
     }
     [sql appendFormat:@" limit %d offset %d ",count,offset];
 }
+
 - (void)executeResult:(FMResultSet *)set block:(void (^)(NSArray *))block
 {
     NSMutableArray* array = [NSMutableArray arrayWithCapacity:0];
     while ([set next]) {
-        NSObject<MHDataBaseModelInteface>* bindingModel = [[[self.class getBindingModelClass] alloc]init];
+        NSObject<MHDataBaseModelInteface>* bindingModel = [[self.modelClass alloc]init];
         bindingModel.rowid = [set intForColumnIndex:0];
         for (int i=0; i<self.columeNames.count; i++) {
             NSString* columeName = [self.columeNames objectAtIndex:i];
@@ -227,45 +236,53 @@ static NSMutableDictionary* onceCreateTable;
              NSMutableString* insertKey = [NSMutableString stringWithCapacity:0];
              NSMutableString* insertValuesString = [NSMutableString stringWithCapacity:0];
              NSMutableArray* insertValues = [NSMutableArray arrayWithCapacity:self.columeNames.count];
-             for (int i=0; i<self.columeNames.count; i++) {
-                 
-                 NSString* proname = [self.columeNames objectAtIndex:i];
-                 [insertKey appendFormat:@"%@,", proname];
-                 [insertValuesString appendString:@"?,"];
-                 id value =[self safetyGetModel:model valueKey:proname];
-                 if([value isKindOfClass:[UIImage class]])
+             if (self.columeNames.count > 0) {
+                 for (int i=0; i<self.columeNames.count; i++) {
+                     
+                     NSString* proname = [self.columeNames objectAtIndex:i];
+                     [insertKey appendFormat:@"%@,", proname];
+                     [insertValuesString appendString:@"?,"];
+                     id value =[self safetyGetModel:model valueKey:proname];
+                     if([value isKindOfClass:[UIImage class]])
+                     {
+                         NSString* filename = [NSString stringWithFormat:@"img%f",[date timeIntervalSince1970]];
+                         [UIImageJPEGRepresentation(value, 1) writeToFile:[SandboxFile GetPathForDocuments:filename inDir:@"dbImages"] atomically:YES];
+                         value = filename;
+                     }
+                     else if([value isKindOfClass:[NSData class]])
+                     {
+                         NSString* filename = [NSString stringWithFormat:@"data%f",[date timeIntervalSince1970]];
+                         [value writeToFile:[SandboxFile GetPathForDocuments:filename inDir:@"dbdata"] atomically:YES];
+                         value = filename;
+                     }
+                     else if([value isKindOfClass:[NSDate class]])
+                     {
+                         value = [self stringWithDate:value];
+                     }
+                     else if([value isKindOfClass:[NSDictionary class]]||[value isKindOfClass:[NSArray class]]){
+                         value = [NSKeyedArchiver archivedDataWithRootObject:value];
+                     }
+                     [insertValues addObject:value];
+                 }
+                 [insertKey deleteCharactersInRange:NSMakeRange(insertKey.length - 1, 1)];
+                 [insertValuesString deleteCharactersInRange:NSMakeRange(insertValuesString.length - 1, 1)];
+                 NSString* insertSQL = [NSString stringWithFormat:@"insert into %@(%@) values(%@)",self.tableName,insertKey,insertValuesString];
+                 BOOL execute = [db executeUpdate:insertSQL withArgumentsInArray:insertValues];
+                 model.rowid = (int )db.lastInsertRowId;
+                 if(block != nil)
                  {
-                     NSString* filename = [NSString stringWithFormat:@"img%f",[date timeIntervalSince1970]];
-                     [UIImageJPEGRepresentation(value, 1) writeToFile:[SandboxFile GetPathForDocuments:filename inDir:@"dbImages"] atomically:YES];
-                     value = filename;
+                     block(execute);
                  }
-                 else if([value isKindOfClass:[NSData class]])
+                 if(execute == NO)
                  {
-                     NSString* filename = [NSString stringWithFormat:@"data%f",[date timeIntervalSince1970]];
-                     [value writeToFile:[SandboxFile GetPathForDocuments:filename inDir:@"dbdata"] atomically:YES];
-                     value = filename;
+                     NSLog(@"database insert fail %@",NSStringFromClass(model.class));
                  }
-                 else if([value isKindOfClass:[NSDate class]])
-                 {
-                     value = [self stringWithDate:value];
-                 }
-                 else if([value isKindOfClass:[NSDictionary class]]||[value isKindOfClass:[NSArray class]]){
-                     value = [NSKeyedArchiver archivedDataWithRootObject:value];
-                 }
-                 [insertValues addObject:value];
-             }
-             [insertKey deleteCharactersInRange:NSMakeRange(insertKey.length - 1, 1)];
-             [insertValuesString deleteCharactersInRange:NSMakeRange(insertValuesString.length - 1, 1)];
-             NSString* insertSQL = [NSString stringWithFormat:@"insert into %@(%@) values(%@)",[self.class getTableName],insertKey,insertValuesString];
-             BOOL execute = [db executeUpdate:insertSQL withArgumentsInArray:insertValues];
-             model.rowid = (int )db.lastInsertRowId;
-             if(block != nil)
+             }else//error
              {
-                block(execute);
-             }
-             if(execute == NO)
-             {
-                 NSLog(@"database insert fail %@",NSStringFromClass(model.class));
+                 if(block != nil)
+                 {
+                     block(NO);
+                 }
              }
          }
          
@@ -306,7 +323,7 @@ static NSMutableDictionary* onceCreateTable;
          }
          [insertKey deleteCharactersInRange:NSMakeRange(insertKey.length - 1, 1)];
          [insertValuesString deleteCharactersInRange:NSMakeRange(insertValuesString.length - 1, 1)];
-         NSString* insertSQL = [NSString stringWithFormat:@"insert into %@(%@) values(%@)",[self.class getTableName],insertKey,insertValuesString];
+         NSString* insertSQL = [NSString stringWithFormat:@"insert into %@(%@) values(%@)",self.tableName,insertKey,insertValuesString];
          BOOL execute = [db executeUpdate:insertSQL withArgumentsInArray:insertValues];
          model.rowid = (int )db.lastInsertRowId;
          if(block != nil)
@@ -355,12 +372,12 @@ static NSMutableDictionary* onceCreateTable;
          NSString* updateSQL;
          if(model.rowid > 0)
          {
-             updateSQL = [NSString stringWithFormat:@"update %@ set %@ where rowid=%d",[self.class getTableName],updateKey,model.rowid];
+             updateSQL = [NSString stringWithFormat:@"update %@ set %@ where rowid=%d",self.tableName,updateKey,model.rowid];
          }
          else
          {
              //如果不通过 rowid 来 更新数据  那 primarykey 一定要有值
-             updateSQL = [NSString stringWithFormat:@"update %@ set %@ where %@=?",[self.class getTableName],updateKey,model.primaryKey];
+             updateSQL = [NSString stringWithFormat:@"update %@ set %@ where %@=?",self.tableName,updateKey,model.primaryKey];
              [updateValues addObject:[self safetyGetModel:model valueKey:model.primaryKey]];
          }
          BOOL execute = [db executeUpdate:updateSQL withArgumentsInArray:updateValues];
@@ -385,12 +402,12 @@ static NSMutableDictionary* onceCreateTable;
          BOOL result;
          if(model.rowid > 0)
          {
-             delete = [NSString stringWithFormat:@"DELETE FROM %@ where rowid=%d",[self.class getTableName],model.rowid];
+             delete = [NSString stringWithFormat:@"DELETE FROM %@ where rowid=%d",self.tableName,model.rowid];
              result = [db executeUpdate:delete];
          }
          else
          {
-             delete = [NSString stringWithFormat:@"DELETE FROM %@ where %@=?",[self.class getTableName],model.primaryKey];
+             delete = [NSString stringWithFormat:@"DELETE FROM %@ where %@=?",self.tableName,model.primaryKey];
              result = [db executeUpdate:delete,[self safetyGetModel:model valueKey:model.primaryKey]];
          }
          if(block != nil)
@@ -404,7 +421,7 @@ static NSMutableDictionary* onceCreateTable;
 {
     [bindingQueue inDatabase:^(FMDatabase* db)
      {
-         NSString* delete = [NSString stringWithFormat:@"DELETE FROM %@ where %@",[self.class getTableName],where];
+         NSString* delete = [NSString stringWithFormat:@"DELETE FROM %@ where %@",self.tableName,where];
          BOOL result = [db executeUpdate:delete];
          if(block != nil)
          {
@@ -467,7 +484,7 @@ static NSMutableDictionary* onceCreateTable;
      {
          NSMutableArray* values = [NSMutableArray arrayWithCapacity:6];
          NSString* wherekey = [self dictionaryToSqlWhere:where andValues:values];
-         NSString* delete = [NSString stringWithFormat:@"DELETE FROM %@ where %@",[self.class getTableName],wherekey];
+         NSString* delete = [NSString stringWithFormat:@"DELETE FROM %@ where %@",self.tableName,wherekey];
          BOOL result = [db executeUpdate:delete withArgumentsInArray:values];
          if(block != nil)
          {
@@ -475,11 +492,12 @@ static NSMutableDictionary* onceCreateTable;
          }
      }];
 }
+
 -(void)clearTableData
 {
     [bindingQueue inDatabase:^(FMDatabase* db)
      {
-         NSString* delete = [NSString stringWithFormat:@"DELETE FROM %@",[self.class getTableName]];
+         NSString* delete = [NSString stringWithFormat:@"DELETE FROM %@",self.tableName];
          [db executeUpdate:delete];
      }];
 }
@@ -494,7 +512,7 @@ static NSMutableDictionary* onceCreateTable;
     [bindingQueue inDatabase:^(FMDatabase* db)
      {
          //rowid 就不判断了
-         NSString* rowCountSql = [NSString stringWithFormat:@"select count(rowid) from %@ where %@",[self.class getTableName],where];
+         NSString* rowCountSql = [NSString stringWithFormat:@"select count(rowid) from %@ where %@",self.tableName,where];
          FMResultSet* resultSet = [db executeQuery:rowCountSql];
          [resultSet next];
          int result =  [resultSet intForColumnIndex:0];
@@ -546,6 +564,7 @@ const static NSString* blobtypestring = @"NSDataUIImage";
     });
     return formatter;
 }
+
 //把Date 转换成String
 - (NSString*)stringWithDate:(NSDate *)date
 {

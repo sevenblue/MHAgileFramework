@@ -12,18 +12,16 @@
 @interface MHDataBaseDAO : MHBaseDAO
 
 -(id)initWithDBQueue:(FMDatabaseQueue*)queue;
+-(id)initWithDBQueue:(FMDatabaseQueue *)queue inTable:(NSString *)tableName modelClass:(Class)modelClass;
 @property(retain,nonatomic)FMDatabaseQueue* bindingQueue;
+@property(copy,nonatomic) NSString *tableName;
+@property(retain,nonatomic)Class modelClass;
 @property(retain,nonatomic)NSMutableDictionary* propertys;  //绑定的model属性集合
 @property(retain,nonatomic)NSMutableArray* columeNames; //列名
 @property(retain,nonatomic)NSMutableArray* columeTypes; //列类型
 
 //清楚创建表的历史记录
 +(void)clearCreateHistory;
-//返回表名  所有 Dao 都必须重载此方法
-+(const NSString*)getTableName;
-
-//返回绑定的Model Class
-+(Class)getBindingModelClass;
 
 -(void)addColume:(NSString*)name type:(NSString*)type;
 -(void)addColumePrimary:(NSString *)name type:(NSString *)type;

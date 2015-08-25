@@ -43,7 +43,7 @@
                     NSLog(@"%@",modelList);
                     
                     /*  #TODO save to DB */
-                    [[MHFMDBManager sharedInstance]insertToDBWithModelList:modelList inDB:@"globle_tables"];
+                    [[MHFMDBManager sharedInstance]insertToDBWithModelList:modelList inDB:kTableName_NewsList modelClass:[MHJsonModel class]];
                     
                 }
                 

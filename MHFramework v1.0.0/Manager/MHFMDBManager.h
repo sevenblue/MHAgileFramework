@@ -26,7 +26,7 @@ AS_SINGLETON(MHFMDBManager);
 -(void)CreateTable;
 
 //添加数据
--(void)insertToDBWithModelList:(id)ModelList inDB:(NSString *)tableName;
+-(void)insertToDBWithModelList:(id)ModelList inDB:(NSString *)tableName modelClass:(Class)modelClass;
 -(void)insertToDBWithModel:(id)Model inDB:(NSString *)tableName;
 //修改数据
 -(void)updateToDB:(id)Model inDB:(NSString *)tableName;
